@@ -38,18 +38,19 @@
         <span class="menu-toggle__bars" aria-hidden="true"></span><span>Menu</span>
       </button>
       <div class="site-menu" id="site-menu" data-menu>
-        <ul class="site-menu__links"><li><a href="#magazines">The Gift Shop</a></li><li><a href="#yearbook">2026 Yearbook</a></li><li><a href="#commission">Commissions</a></li><li><a href="#faq">FAQs</a></li></ul>
-        <a class="btn btn--primary btn--nav" href="#commission">Commission</a>
+        <ul class="site-menu__links"><li><a href="#inside">What's Inside</a></li><li><a href="#birthday">Birthday Issue</a></li><li><a href="#commission">Commissions</a></li><li><a href="#discretion">Discretion</a></li></ul>
+        <a class="btn btn--primary btn--nav" href="#inquiry">Consultation</a>
       </div>
     </nav>
   </div>
 </header>
 <main id="main">
-<section class="hero hero--photo" id="top" aria-labelledby="hero-title">
+<section class="hero hero--photo hero--cover" id="top" aria-labelledby="hero-title">
   <img class="hero__photo" src="assets/img/hero-pool.jpg" width="1510" height="1142" alt="Golden-hour pool terrace with powder-blue striped cabanas, a butter-yellow feather boa, crystal jewelry and glossy magazines on a marble table" sizes="100vw" fetchpriority="high" decoding="async">
   <div class="hero__veil" aria-hidden="true"></div>
   <div class="wrap hero__cover">
-    <svg class="hero__crest" width="240" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-label="The Lyfe Moment Club crest">
+    <div class="hero__top">
+      <svg class="hero__crest" width="240" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-label="The Lyfe Moment Club crest">
   <defs>
     <clipPath id="crest-clip"><path d="M120 34c44 0 76 18 76 18v86c0 58-40 92-76 108-36-16-76-50-76-108V52s32-18 76-18z"/></clipPath>
     <pattern id="crest-stripes" width="24" height="10" patternUnits="userSpaceOnUse"><rect width="12" height="10" fill="#FBE29D"/><rect x="12" width="12" height="10" fill="#fff"/></pattern>
@@ -69,13 +70,36 @@
   <text x="120" y="278" text-anchor="middle" font-family="Jost, Arial, sans-serif" font-weight="600" font-size="13" letter-spacing=".2" fill="#0B5558">Est. 2026 · You Matter, Now</text>
 </svg>
 
-    <p class="hero__issue">The Lyfe Moment Club</p>
-    <h1 id="hero-title">Your year.<br>Your why.<br>On the record.</h1>
-    <p class="hero__sub">Personalized magazines written and designed around you and the reason you do what you do. Commissioned privately, printed beautifully.</p>
-    <div class="actions">
-      <a class="btn btn--primary" href="#commission">Commission your issue</a>
-      <a class="btn btn--glass" href="#magazines">Explore the Gift Shop</a>
+      <p class="masthead" aria-hidden="true">Lyfe Moment</p>
+      <p class="hero__issue">The Lyfe Moment Club · The Year in Review 2026</p>
     </div>
+    <div class="hero__main">
+      <div class="hero__copy">
+        <h1 id="hero-title">The Year in Review.</h1>
+        <p class="hero__sub">A luxury memoir of your year, written and designed around you and your why.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#inquiry">Request a consultation</a>
+          <a class="btn btn--glass" href="#inside">See what's inside</a>
+        </div>
+      </div>
+      <ul class="cover-lines" aria-label="In this issue"><li>You don't need a lifetime to deserve a memoir</li><li>Goals kept, wins earned, people honored</li><li>Plus: The Birthday Issue</li></ul>
+    </div>
+  </div>
+</section>
+<nav class="toc" aria-labelledby="toc-title">
+  <div class="wrap">
+    <h2 id="toc-title" class="toc__title">In this issue</h2>
+    <ol class="toc__list"><li><a href="#letter"><span class="toc__num">01</span><span class="toc__label">Editor's Letter</span><span class="toc__note">Why one year deserves a memoir</span></a></li><li><a href="#inside"><span class="toc__num">02</span><span class="toc__label">What's Inside</span><span class="toc__note">The Year in Review, spread by spread</span></a></li><li><a href="#birthday"><span class="toc__num">03</span><span class="toc__label">The Birthday Issue</span><span class="toc__note">Another year of you, on the cover</span></a></li><li><a href="#commission"><span class="toc__num">04</span><span class="toc__label">Commissions</span><span class="toc__note">Four ways to begin</span></a></li><li><a href="#discretion"><span class="toc__num">05</span><span class="toc__label">Discretion</span><span class="toc__note">For you and your team</span></a></li></ol>
+  </div>
+</nav>
+<section class="letter" id="letter" aria-labelledby="letter-title">
+  <div class="wrap wrap--text">
+    <p class="eyebrow">Editor's Letter</p>
+    <h2 id="letter-title">You don't need a lifetime to deserve a memoir. You need one remarkable year.</h2>
+    <p>People write memoirs to tell their story their own way, to keep it before the details fade, and to leave something for the people they love. Most wait decades. The Year in Review does it now, one chapter at a time.</p>
+    <ul class="letter__reasons"><li><h3>Tell it your way.</h3><p>Your year, told by you and the people who know you, not by an algorithm.</p></li><li><h3>Keep it while it's vivid.</h3><p>The details fade fast. We capture the wins, the turning points and the why while they are fresh.</p></li><li><h3>Honor who carried you.</h3><p>Thank the people who showed up, and remember the ones you lost along the way.</p></li></ul>
+    <p class="letter__sign" aria-hidden="true">With love, the editors</p>
+    <p class="letter__signed">The Lyfe Moment Club</p>
   </div>
 </section>
 <section class="need" aria-labelledby="need-title">
@@ -123,81 +147,48 @@
     <p class="story__note">Example layout. Your issue is written and designed around your own story.</p>
   </div>
 </section>
-<section class="manifesto" aria-labelledby="manifesto-title">
-  <div class="wrap wrap--text">
-    <p class="eyebrow">The Lyfe Moment Club</p>
-    <h2 id="manifesto-title">The Y is for you, and your why.</h2>
-    <p>Too many people are only celebrated after they are gone. The executives, creatives, pastors, public servants, artists and athletes who make things happen deserve their cover story now, while they can hold it.</p>
-    <p>Each issue puts your year on the record: the goals you kept, the wins big and small, and the why behind them.</p>
+<section class="anatomy" id="inside" aria-labelledby="anatomy-title">
+  <div class="wrap anatomy__grid">
+    <div class="anatomy__intro">
+      <p class="eyebrow">What's inside</p>
+      <h2 id="anatomy-title">The Year in Review, spread by spread.</h2>
+      <p>A softcover magazine, written from a private interview and designed like a fashion editorial.</p>
+      <a class="btn btn--primary" href="#inquiry">Request a consultation</a>
+    </div>
+    <ol class="anatomy__list"><li class="anatomy__item"><span class="anatomy__pages">Cover</span><div><h3>Your cover story</h3><p>You, photographed or chosen from your favorites, with your year as the headline.</p></div></li><li class="anatomy__item"><span class="anatomy__pages">p. 2</span><div><h3>Editor's letter</h3><p>A personal opening written for you.</p></div></li><li class="anatomy__item"><span class="anatomy__pages">p. 4</span><div><h3>Goals kept</h3><p>Your 2026 goals, checked off, with the ones you are carrying forward.</p></div></li><li class="anatomy__item"><span class="anatomy__pages">p. 8</span><div><h3>The feature</h3><p>A sit-down interview and a featured article about your year and your why.</p></div></li><li class="anatomy__item"><span class="anatomy__pages">p. 18</span><div><h3>The wins, month by month</h3><p>A dated timeline of milestones, big and small.</p></div></li><li class="anatomy__item"><span class="anatomy__pages">p. 26</span><div><h3>The people</h3><p>Thank-yous from family, friends and colleagues, and an In Memoriam page for those you lost.</p></div></li><li class="anatomy__item"><span class="anatomy__pages">p. 34</span><div><h3>Hopes for 2027</h3><p>The next chapter, written down so next year's issue has a story to finish.</p></div></li><li class="anatomy__item"><span class="anatomy__pages">Back</span><div><h3>Colophon</h3><p>Your issue number, the date, and our house rule.</p></div></li></ol>
   </div>
 </section>
-<section class="feature" id="yearbook" aria-labelledby="feature-title">
-  <div class="feature__photo photo-fallback photo-fallback--editorial" role="img" aria-label="A woman in a butter-yellow and powder-blue feather dress with crystal trim, poolside at sunset"></div>
-  <div class="feature__veil" aria-hidden="true"></div>
-  <div class="wrap feature__inner">
-    <div class="feature__panel">
-      <span class="rhinestones" aria-hidden="true"></span>
-      <p class="eyebrow">Special edition</p>
-      <h2 id="feature-title">The 2026 Yearbook</h2>
-      <p class="feature__script" aria-hidden="true">your year, in print</p>
-      <p>Your year, memorialized in one glossy issue. We close the loop on 2026 and open the page on 2027.</p>
-      <ul class="ticks"><li>Your 2026 goals, checked off</li><li>Your wins, big and small, month by month</li><li>A sit-down interview and a featured article about your year</li><li>Your hopes and goals for 2027</li></ul>
-      <p class="feature__note">A gift for Christmas, New Year's Eve and year-end celebrations.</p>
-      <a class="btn btn--primary" href="products/the-2026-yearbook/">Reserve the 2026 Yearbook</a>
-    </div>
-  </div>
-</section>
-<section class="ways" id="commission" aria-labelledby="ways-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="ways-title">Ways to commission.</h2>
-      <p>Each issue is a magazine, a coffee table book or a yearbook, made for one person and the people who love them. Add The Headlines for a newspaper of your biggest wins.</p>
-    </div>
-    <ul class="tiers"><li class="tier"><h3>Editor's Template</h3><p class="tier__price">From $550</p><p>Our designed magazine, a cover we design around your photo, and a call with an editor. You fill in the inside. One cover revision.</p></li><li class="tier"><h3>Signature Issue</h3><p class="tier__price">From $3,500</p><p>Made for you. An interview, a featured article, full design and three printed copies. Two rounds of revisions.</p></li><li class="tier"><h3>Coffee Table Edition</h3><p class="tier__price">From $7,500</p><p>A hardcover yearbook in a crest gift box, five copies. Three rounds of revisions.</p></li><li class="tier"><h3>Private Commission</h3><p class="tier__price">By consultation</p><p>Our concierge works with you or your assistant, gathers from family, team or label, and delivers to your event. For record labels and companies too.</p></li></ul>
-    <p class="tiers__cta"><a class="btn btn--primary" href="#inquiry">Request a private consultation</a></p>
-  </div>
-</section>
-<section class="directory" id="magazines" aria-labelledby="directory-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="directory-title">The Gift Shop.</h2>
-      <p>Each issue, finished with the club crest.</p>
-    </div>
-    
-    <p class="visually-hidden" role="status" aria-live="polite" data-filter-status></p>
-    <ul class="product-grid" data-product-grid>
-      <li class="product-card" data-category="magazines" data-occasions="year-in-review family" data-product="the-2026-yearbook">
-        <a class="product-card__link" href="products/the-2026-yearbook/">
-          <div class="product-card__art"><div class="issue-cover">
-    <div class="issue-cover__photo photo-fallback photo-fallback--editorial" role="img" aria-label="A woman in a butter-yellow and powder-blue feather dress with crystal trim, poolside at sunset"></div>
-    <span class="issue-cover__masthead" aria-hidden="true">Lyfe Moment</span>
-    <span class="issue-cover__line" aria-hidden="true">The 2026 Yearbook</span>
-    <span class="issue-cover__tag">Sample cover</span>
-  </div></div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">The 2026 Yearbook</h3>
-            <p class="product-card__desc">Your year, personalized like a yearbook made only for you.</p>
-          </div>
-        </a>
-      </li>
-      <li class="product-card" data-category="magazines" data-occasions="birthdays" data-product="the-birthday-issue">
-        <a class="product-card__link" href="products/the-birthday-issue/">
-          <div class="product-card__art"><div class="issue-cover">
+<section class="bday" id="birthday" aria-labelledby="bday-title">
+  <div class="wrap bday__grid">
+    <div class="bday__cover"><a href="products/the-birthday-issue/" aria-label="The Birthday Issue"><div class="issue-cover">
     <div class="issue-cover__photo photo-fallback photo-fallback--editorial" role="img" aria-label="A woman in a butter-yellow and powder-blue feather dress with crystal trim, poolside at sunset"></div>
     <span class="issue-cover__masthead" aria-hidden="true">Lyfe Moment</span>
     <span class="issue-cover__line" aria-hidden="true">The Birthday Issue</span>
     <span class="issue-cover__tag">Sample cover</span>
-  </div></div>
-          <div class="product-card__body">
-            <h3 class="product-card__title">The Birthday Issue</h3>
-            <p class="product-card__desc">Their year, their face on the cover, their story in print.</p>
-          </div>
-        </a>
-      </li>
-    </ul>
-    <p class="empty-state" data-empty hidden>Nothing in this group yet. Try another category.</p>
+  </div></a></div>
+    <div class="bday__text">
+      <p class="eyebrow">Also in this issue</p>
+      <h2 id="bday-title">The Birthday Issue. Another year of you, on the cover.</h2>
+      <p>A birthday magazine for milestone birthdays: the year in pictures, an interview with the birthday guest, and messages from the people who love them.</p>
+      <ul class="ticks"><li>Their name and age as the cover headline</li><li>A year in pictures</li><li>Messages from friends and family</li><li>A wish for the year ahead</li></ul>
+      <p class="bday__price">From $1,200, made for you</p>
+      <a class="btn btn--primary" href="products/the-birthday-issue/">See the Birthday Issue</a>
+    </div>
   </div>
 </section>
+
+
+<section class="ways" id="commission" aria-labelledby="ways-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="ways-title">Commissions.</h2>
+      <p>Every issue is a softcover magazine, printed and shipped to you. Hardcover editions are coming. Add The Headlines for a newspaper of your biggest wins.</p>
+    </div>
+    <ul class="tiers"><li class="tier"><h3>Editor's Template</h3><p class="tier__price">From $550</p><p>Our designed Year in Review or Birthday template, a cover we design around your photo, and a call with an editor. One cover revision.</p></li><li class="tier"><h3>The Birthday Issue</h3><p class="tier__price">From $1,200</p><p>Made for you, with messages from friends and family and two printed copies. Two rounds of revisions.</p></li><li class="tier"><h3>The Year in Review</h3><p class="tier__price">From $3,500</p><p>Made for you. A private interview, a featured article, goals kept, In Memoriam and three printed copies. Two rounds of revisions.</p></li><li class="tier"><h3>Private Commission</h3><p class="tier__price">By consultation</p><p>Our concierge works with you or your assistant, gathers from family, team or label, and delivers to your event. For record labels and companies too.</p></li></ul>
+    <p class="tiers__cta"><a class="btn btn--primary" href="#inquiry">Request a private consultation</a></p>
+  </div>
+</section>
+
 <section class="team" id="discretion" aria-labelledby="team-title">
   <div class="wrap">
     <div class="section-head">
@@ -205,7 +196,14 @@
       <h2 id="team-title">Discretion, handled.</h2>
       <p>What clients and their assistants ask us first.</p>
     </div>
-    <ul class="team__list"><li class="team__item"><h3>Is my story kept private?</h3><p>Yes. Your photos and story are private by default and are never shared or published without your written permission.</p></li><li class="team__item"><h3>Can my assistant handle everything?</h3><p>Yes. One point of contact for your team. Your assistant can send photos, schedule the interview and approve proofs.</p></li><li class="team__item"><h3>Do I get revisions?</h3><p>Yes. Every tier includes revision rounds, and nothing prints until you approve a final proof.</p></li><li class="team__item"><h3>How long does it take?</h3><p>Templates in days, Signature Issues in about four weeks, Coffee Table Editions in six to eight weeks. Rush is available.</p></li><li class="team__item"><h3>Can it arrive as a gift?</h3><p>Yes. Gift presentation in a crest box with a handwritten note, shipped insured with signature, or delivered to your event.</p></li><li class="team__item"><h3>Can you sign our NDA?</h3><p>Ask during your consultation and we will review it with you.</p></li></ul>
+    <ul class="team__list"><li class="team__item"><h3>Is my story kept private?</h3><p>Yes. Your photos and story are private by default and are never shared or published without your written permission.</p></li><li class="team__item"><h3>Can my assistant handle everything?</h3><p>Yes. One point of contact for your team. Your assistant can send photos, schedule the interview and approve proofs.</p></li><li class="team__item"><h3>Do I get revisions?</h3><p>Yes. Every tier includes revision rounds, and nothing prints until you approve a final proof.</p></li><li class="team__item"><h3>How long does it take?</h3><p>Templates in days and Made for You issues in about four weeks after your interview and photos. Rush is available.</p></li><li class="team__item"><h3>Can it arrive as a gift?</h3><p>Yes. Gift presentation in a crest box with a handwritten note, shipped insured with signature, or delivered to your event.</p></li><li class="team__item"><h3>Can you sign our NDA?</h3><p>Ask during your consultation and we will review it with you.</p></li></ul>
+  </div>
+</section>
+<section class="rule" aria-labelledby="rule-title">
+  <div class="wrap wrap--text">
+    <p class="eyebrow" id="rule-title">Our house rule</p>
+    <p class="rule__line">We only print what is true, honorable and lovely.</p>
+    <p class="rule__verse">“Whatsoever things are true… whatsoever things are lovely… think on these things.” Philippians 4:8</p>
   </div>
 </section>
 
@@ -223,11 +221,11 @@
     </div>
   </div>
 </section>
-<section class="schools schools--form-only" id="schools" aria-label="Tell us about your project.">
+<section class="schools schools--form-only" id="schools" aria-label="Begin your commission.">
   <div class="wrap schools__grid">
     
     <div class="form-panel" id="inquiry" tabindex="-1">
-      <h2 class="form-panel__title">Tell us about your project.</h2>
+      <h2 class="form-panel__title">Begin your commission.</h2>
       <p>Share what you are creating and we will reply by email. There is no cost or commitment to ask.</p>
       <p class="notice" data-preview-notice>Preview only: this form is not connected yet, so nothing you enter is sent or saved. To reach us now, email <a href="mailto:breadoflyfepublishing@gmail.com">breadoflyfepublishing@gmail.com</a>.</p>
       <form class="inquiry-form" data-inquiry-form data-connected="false" action="/api/magazine-inquiry" method="post" novalidate>

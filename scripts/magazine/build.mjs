@@ -218,18 +218,103 @@ function crestSvg() {
 
 function hero() {
   const h = content.hero;
-  return `<section class="hero hero--photo" id="top" aria-labelledby="hero-title">
+  const lines = (h.coverLines || []).map((l) => `<li>${esc(l)}</li>`).join('');
+  return `<section class="hero hero--photo hero--cover" id="top" aria-labelledby="hero-title">
   ${photo('hero', '', { eager: true, cls: 'hero__photo' })}
   <div class="hero__veil" aria-hidden="true"></div>
   <div class="wrap hero__cover">
-    ${h.crest ? crestSvg() : ''}
-    <p class="hero__issue">${esc(h.eyebrow)}</p>
-    <h1 id="hero-title">${h.headline.split(/(?<=\.)\s+/).map(esc).join('<br>')}</h1>
-    <p class="hero__sub">${esc(h.copy)}</p>
-    <div class="actions">
-      <a class="btn btn--primary" href="${esc(h.primaryCta.href)}">${esc(h.primaryCta.label)}</a>
-      <a class="btn btn--glass" href="${esc(h.secondaryCta.href)}">${esc(h.secondaryCta.label)}</a>
+    <div class="hero__top">
+      ${h.crest ? crestSvg() : ''}
+      <p class="masthead" aria-hidden="true">${esc(h.masthead)}</p>
+      <p class="hero__issue">${esc(h.eyebrow)}</p>
     </div>
+    <div class="hero__main">
+      <div class="hero__copy">
+        <h1 id="hero-title">${h.headline.split(/(?<=\.)\s+/).map(esc).join('<br>')}</h1>
+        <p class="hero__sub">${esc(h.copy)}</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="${esc(h.primaryCta.href)}">${esc(h.primaryCta.label)}</a>
+          <a class="btn btn--glass" href="${esc(h.secondaryCta.href)}">${esc(h.secondaryCta.label)}</a>
+        </div>
+      </div>
+      ${lines ? `<ul class="cover-lines" aria-label="In this issue">${lines}</ul>` : ''}
+    </div>
+  </div>
+</section>`;
+}
+
+function toc() {
+  const t = content.toc;
+  if (!t) return '';
+  const items = t.items.map((it, i) => `<li><a href="${esc(it.href)}"><span class="toc__num">${String(i + 1).padStart(2, '0')}</span><span class="toc__label">${esc(it.label)}</span><span class="toc__note">${esc(it.note)}</span></a></li>`).join('');
+  return `<nav class="toc" aria-labelledby="toc-title">
+  <div class="wrap">
+    <h2 id="toc-title" class="toc__title">${esc(t.heading)}</h2>
+    <ol class="toc__list">${items}</ol>
+  </div>
+</nav>`;
+}
+
+function editorsLetter() {
+  const e = content.editorsLetter;
+  if (!e) return '';
+  const reasons = e.reasons.map((r) => `<li><h3>${esc(r.title)}</h3><p>${esc(r.copy)}</p></li>`).join('');
+  return `<section class="letter" id="letter" aria-labelledby="letter-title">
+  <div class="wrap wrap--text">
+    <p class="eyebrow">${esc(e.eyebrow)}</p>
+    <h2 id="letter-title">${esc(e.heading)}</h2>
+    ${e.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
+    <ul class="letter__reasons">${reasons}</ul>
+    <p class="letter__sign" aria-hidden="true">${esc(e.signature)}</p>
+    <p class="letter__signed">${esc(e.signedBy)}</p>
+  </div>
+</section>`;
+}
+
+function anatomy() {
+  const a = content.anatomy;
+  if (!a) return '';
+  const items = a.items.map((it) => `<li class="anatomy__item"><span class="anatomy__pages">${esc(it.pages)}</span><div><h3>${esc(it.title)}</h3><p>${esc(it.copy)}</p></div></li>`).join('');
+  return `<section class="anatomy" id="inside" aria-labelledby="anatomy-title">
+  <div class="wrap anatomy__grid">
+    <div class="anatomy__intro">
+      <p class="eyebrow">${esc(a.eyebrow)}</p>
+      <h2 id="anatomy-title">${esc(a.heading)}</h2>
+      <p>${esc(a.copy)}</p>
+      <a class="btn btn--primary" href="${esc(a.cta.href)}">${esc(a.cta.label)}</a>
+    </div>
+    <ol class="anatomy__list">${items}</ol>
+  </div>
+</section>`;
+}
+
+function birthdayBand() {
+  const b = content.birthdayBand;
+  if (!b) return '';
+  const p = content.products.find((x) => x.slug === b.slug);
+  return `<section class="bday" id="birthday" aria-labelledby="bday-title">
+  <div class="wrap bday__grid">
+    <div class="bday__cover">${p ? `<a href="products/${esc(p.slug)}/" aria-label="${esc(p.name)}">${issueCover(p, '')}</a>` : ''}</div>
+    <div class="bday__text">
+      <p class="eyebrow">${esc(b.eyebrow)}</p>
+      <h2 id="bday-title">${esc(b.heading)}</h2>
+      <p>${esc(b.copy)}</p>
+      <ul class="ticks">${b.inside.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+      <p class="bday__price">${esc(b.price)}</p>
+      <a class="btn btn--primary" href="${esc(b.cta.href)}">${esc(b.cta.label)}</a>
+    </div>
+  </div>
+</section>`;
+}
+
+function houseRule() {
+  const r = content.houseRule;
+  if (!r) return '';
+  return `<section class="rule" aria-labelledby="rule-title">
+  <div class="wrap wrap--text">
+    <p class="eyebrow" id="rule-title">${esc(r.eyebrow)}</p>
+    <p class="rule__line">${esc(r.line)}</p>
+    <p class="rule__verse">${esc(r.verse)}</p>
   </div>
 </section>`;
 }
@@ -692,13 +777,18 @@ ${brandStrip()}
 ${header('', { onLanding: true })}
 <main id="main">
 ${hero()}
+${toc()}
+${editorsLetter()}
 ${need()}
 ${journeyStory()}
-${manifesto()}
-${feature()}
+${anatomy()}
+${birthdayBand()}
+${show('manifesto') ? manifesto() : ''}
+${show('feature') ? feature() : ''}
 ${ways()}
-${directory()}
+${show('directory') ? directory() : ''}
 ${team()}
+${houseRule()}
 ${show('journey') ? journey() : ''}
 ${show('howItWorks') ? howItWorks() : ''}
 ${show('occasions') ? occasions() : ''}

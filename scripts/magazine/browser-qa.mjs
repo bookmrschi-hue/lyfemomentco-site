@@ -45,18 +45,18 @@ async function run(browserType, label) {
       await page.keyboard.press('Escape');
       check(`${label} ${w}px menu closes on Escape and returns focus`, (await toggle.getAttribute('aria-expanded')) === 'false' && (await page.evaluate(() => document.activeElement.hasAttribute('data-menu-toggle'))));
       await toggle.click();
-      await page.locator('#site-menu a', { hasText: 'FAQs' }).click();
+      await page.locator('#site-menu a', { hasText: 'Discretion' }).click();
       await page.waitForTimeout(700);
-      const faqTop = await page.evaluate(() => document.getElementById('faq').getBoundingClientRect().top);
+      const faqTop = await page.evaluate(() => document.getElementById('discretion').getBoundingClientRect().top);
       const headerH = await page.evaluate(() => document.querySelector('[data-header]').offsetHeight);
       check(`${label} ${w}px anchor not hidden under sticky header`, faqTop >= headerH - 2, `top ${Math.round(faqTop)} header ${headerH}`);
     }
 
     if (w === 390 || w === 1280) {
-      // Only the six magazine & newspaper issues are listed
-      const cards = await page.locator('.product-card:visible').count();
-      const hiddenShown = await page.locator('[data-product="photo-strips"], [data-product="the-love-issue"]').count();
-      check(`${label} ${w}px launch issues listed, hidden products absent`, cards === 2 && hiddenShown === 0, `${cards} cards`);
+      // Year in Review layout: what's inside, the Birthday Issue, no hidden products
+      const hasSections = await page.evaluate(() => ['inside', 'birthday', 'commission', 'discretion'].every((id) => document.getElementById(id)));
+      const hiddenShown = await page.locator('a[href*="the-love-issue"], a[href*="photo-strips"]').count();
+      check(`${label} ${w}px Year in Review sections present, hidden products absent`, hasSections && hiddenShown === 0);
 
       // FAQ accordion
       const det = page.locator('.faq__item').first();

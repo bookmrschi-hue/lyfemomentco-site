@@ -121,7 +121,7 @@ test('staging pages carry noindex and no fabricated prices or reviews', () => {
   if (content.site.indexing === 'staging') assert.match(html, /<meta name="robots" content="noindex, nofollow">/);
   assert.doesNotMatch(html, /"@type":"(Product|Offer|Review|AggregateRating)"/);
   // Only owner-approved prices (content.ways, approved 2026-10-27) may appear.
-  const approved = new Set((content.ways?.items || []).map((i) => (i.price || '').match(/\$\d[\d,]*/)?.[0]).filter(Boolean));
-  for (const m of html.match(/\$\d[\d,]*/g) || []) assert.ok(approved.has(m), `unapproved price ${m}`);
+  const approved = new Set((content.ways?.items || []).map((i) => (i.price || '').match(/\$\d{1,3}(?:,\d{3})*/)?.[0]).filter(Boolean));
+  for (const m of html.match(/\$\d{1,3}(?:,\d{3})*/g) || []) assert.ok(approved.has(m), `unapproved price ${m}`);
   assert.doesNotMatch(html, /sk_live|sk_test|AIza|BEGIN PRIVATE KEY/);
 });

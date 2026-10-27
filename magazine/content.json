@@ -43,45 +43,45 @@
   "nav": {
     "links": [
       {
-        "label": "The Gift Shop",
-        "href": "#magazines"
+        "label": "What's Inside",
+        "href": "#inside"
       },
       {
-        "label": "2026 Yearbook",
-        "href": "#yearbook"
+        "label": "Birthday Issue",
+        "href": "#birthday"
       },
       {
         "label": "Commissions",
         "href": "#commission"
       },
       {
-        "label": "FAQs",
-        "href": "#faq"
+        "label": "Discretion",
+        "href": "#discretion"
       }
     ],
     "cta": {
-      "label": "Commission",
-      "href": "#commission"
+      "label": "Consultation",
+      "href": "#inquiry"
     }
   },
   "hero": {
-    "eyebrow": "The Lyfe Moment Club",
+    "eyebrow": "The Lyfe Moment Club · The Year in Review 2026",
     "masthead": "Lyfe Moment",
-    "headline": "Your year. Your why. On the record.",
+    "headline": "The Year in Review.",
     "scriptAccent": "your moment, in print",
-    "copy": "Personalized magazines written and designed around you and the reason you do what you do. Commissioned privately, printed beautifully.",
+    "copy": "A luxury memoir of your year, written and designed around you and your why.",
     "coverLines": [
-      "The 2026 Yearbook",
-      "The Birthday Issue",
-      "DIY or Made for You"
+      "You don't need a lifetime to deserve a memoir",
+      "Goals kept, wins earned, people honored",
+      "Plus: The Birthday Issue"
     ],
     "primaryCta": {
-      "label": "Commission your issue",
-      "href": "#commission"
+      "label": "Request a consultation",
+      "href": "#inquiry"
     },
     "secondaryCta": {
-      "label": "Explore the Gift Shop",
-      "href": "#magazines"
+      "label": "See what's inside",
+      "href": "#inside"
     },
     "mockupCaption": "",
     "showCover": false,
@@ -1155,7 +1155,7 @@
   },
   "inquiryForm": {
     "id": "inquiry",
-    "heading": "Tell us about your project.",
+    "heading": "Begin your commission.",
     "copy": "Share what you are creating and we will reply by email. There is no cost or commitment to ask.",
     "connected": false,
     "_connectedHelp": "Set to true ONLY after the server endpoint is connected to storage and a test submission has been confirmed. While false, the form shows a preview notice and sends nothing.",
@@ -1321,26 +1321,26 @@
     }
   },
   "ways": {
-    "heading": "Ways to commission.",
-    "copy": "Each issue is a magazine, a coffee table book or a yearbook, made for one person and the people who love them. Add The Headlines for a newspaper of your biggest wins.",
+    "heading": "Commissions.",
+    "copy": "Every issue is a softcover magazine, printed and shipped to you. Hardcover editions are coming. Add The Headlines for a newspaper of your biggest wins.",
     "items": [
       {
         "id": "template",
         "title": "Editor's Template",
         "price": "From $550",
-        "copy": "Our designed magazine, a cover we design around your photo, and a call with an editor. You fill in the inside. One cover revision."
+        "copy": "Our designed Year in Review or Birthday template, a cover we design around your photo, and a call with an editor. One cover revision."
       },
       {
-        "id": "signature",
-        "title": "Signature Issue",
+        "id": "birthday",
+        "title": "The Birthday Issue",
+        "price": "From $1,200",
+        "copy": "Made for you, with messages from friends and family and two printed copies. Two rounds of revisions."
+      },
+      {
+        "id": "review",
+        "title": "The Year in Review",
         "price": "From $3,500",
-        "copy": "Made for you. An interview, a featured article, full design and three printed copies. Two rounds of revisions."
-      },
-      {
-        "id": "coffee",
-        "title": "Coffee Table Edition",
-        "price": "From $7,500",
-        "copy": "A hardcover yearbook in a crest gift box, five copies. Three rounds of revisions."
+        "copy": "Made for you. A private interview, a featured article, goals kept, In Memoriam and three printed copies. Two rounds of revisions."
       },
       {
         "id": "private",
@@ -1378,7 +1378,10 @@
     "schools": false,
     "howItWorks": false,
     "publisher": false,
-    "finalCta": false
+    "finalCta": false,
+    "manifesto": false,
+    "feature": false,
+    "directory": false
   },
   "manifesto": {
     "eyebrow": "The Lyfe Moment Club",
@@ -1458,7 +1461,7 @@
       },
       {
         "q": "How long does it take?",
-        "a": "Templates in days, Signature Issues in about four weeks, Coffee Table Editions in six to eight weeks. Rush is available."
+        "a": "Templates in days and Made for You issues in about four weeks after your interview and photos. Rush is available."
       },
       {
         "q": "Can it arrive as a gift?",
@@ -1469,5 +1472,131 @@
         "a": "Ask during your consultation and we will review it with you."
       }
     ]
+  },
+  "toc": {
+    "heading": "In this issue",
+    "items": [
+      {
+        "label": "Editor's Letter",
+        "note": "Why one year deserves a memoir",
+        "href": "#letter"
+      },
+      {
+        "label": "What's Inside",
+        "note": "The Year in Review, spread by spread",
+        "href": "#inside"
+      },
+      {
+        "label": "The Birthday Issue",
+        "note": "Another year of you, on the cover",
+        "href": "#birthday"
+      },
+      {
+        "label": "Commissions",
+        "note": "Four ways to begin",
+        "href": "#commission"
+      },
+      {
+        "label": "Discretion",
+        "note": "For you and your team",
+        "href": "#discretion"
+      }
+    ]
+  },
+  "editorsLetter": {
+    "eyebrow": "Editor's Letter",
+    "heading": "You don't need a lifetime to deserve a memoir. You need one remarkable year.",
+    "paragraphs": [
+      "People write memoirs to tell their story their own way, to keep it before the details fade, and to leave something for the people they love. Most wait decades. The Year in Review does it now, one chapter at a time."
+    ],
+    "reasons": [
+      {
+        "title": "Tell it your way.",
+        "copy": "Your year, told by you and the people who know you, not by an algorithm."
+      },
+      {
+        "title": "Keep it while it's vivid.",
+        "copy": "The details fade fast. We capture the wins, the turning points and the why while they are fresh."
+      },
+      {
+        "title": "Honor who carried you.",
+        "copy": "Thank the people who showed up, and remember the ones you lost along the way."
+      }
+    ],
+    "signature": "With love, the editors",
+    "signedBy": "The Lyfe Moment Club"
+  },
+  "anatomy": {
+    "eyebrow": "What's inside",
+    "heading": "The Year in Review, spread by spread.",
+    "copy": "A softcover magazine, written from a private interview and designed like a fashion editorial.",
+    "cta": {
+      "label": "Request a consultation",
+      "href": "#inquiry"
+    },
+    "items": [
+      {
+        "pages": "Cover",
+        "title": "Your cover story",
+        "copy": "You, photographed or chosen from your favorites, with your year as the headline."
+      },
+      {
+        "pages": "p. 2",
+        "title": "Editor's letter",
+        "copy": "A personal opening written for you."
+      },
+      {
+        "pages": "p. 4",
+        "title": "Goals kept",
+        "copy": "Your 2026 goals, checked off, with the ones you are carrying forward."
+      },
+      {
+        "pages": "p. 8",
+        "title": "The feature",
+        "copy": "A sit-down interview and a featured article about your year and your why."
+      },
+      {
+        "pages": "p. 18",
+        "title": "The wins, month by month",
+        "copy": "A dated timeline of milestones, big and small."
+      },
+      {
+        "pages": "p. 26",
+        "title": "The people",
+        "copy": "Thank-yous from family, friends and colleagues, and an In Memoriam page for those you lost."
+      },
+      {
+        "pages": "p. 34",
+        "title": "Hopes for 2027",
+        "copy": "The next chapter, written down so next year's issue has a story to finish."
+      },
+      {
+        "pages": "Back",
+        "title": "Colophon",
+        "copy": "Your issue number, the date, and our house rule."
+      }
+    ]
+  },
+  "birthdayBand": {
+    "slug": "the-birthday-issue",
+    "eyebrow": "Also in this issue",
+    "heading": "The Birthday Issue. Another year of you, on the cover.",
+    "copy": "A birthday magazine for milestone birthdays: the year in pictures, an interview with the birthday guest, and messages from the people who love them.",
+    "inside": [
+      "Their name and age as the cover headline",
+      "A year in pictures",
+      "Messages from friends and family",
+      "A wish for the year ahead"
+    ],
+    "price": "From $1,200, made for you",
+    "cta": {
+      "label": "See the Birthday Issue",
+      "href": "products/the-birthday-issue/"
+    }
+  },
+  "houseRule": {
+    "eyebrow": "Our house rule",
+    "line": "We only print what is true, honorable and lovely.",
+    "verse": "“Whatsoever things are true… whatsoever things are lovely… think on these things.” Philippians 4:8"
   }
 }
