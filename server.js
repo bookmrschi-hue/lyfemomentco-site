@@ -7,6 +7,9 @@ const app = express();
 app.use(express.json());
 app.use(express.static('.'));
 
+// Magazine publishing inquiry form (see lib/magazine-inquiry.js).
+app.post('/api/magazine-inquiry', require('./lib/magazine-inquiry').expressHandler);
+
 const client = new SquareClient({
   token: process.env.SQUARE_ACCESS_TOKEN,
   environment: process.env.SQUARE_ENV === 'production'
