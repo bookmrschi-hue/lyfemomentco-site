@@ -43,7 +43,7 @@
   "nav": {
     "links": [
       {
-        "label": "The Issues",
+        "label": "The Gift Shop",
         "href": "#magazines"
       },
       {
@@ -65,11 +65,11 @@
     }
   },
   "hero": {
-    "eyebrow": "The Holiday Issue · 2026",
+    "eyebrow": "The Lyfe Moment Club · Est. 2026",
     "masthead": "Lyfe Moment",
-    "headline": "Your memories, a cover story.",
-    "scriptAccent": "made for your moment",
-    "copy": "Personalized magazines and newspapers, designed like a fashion editorial and made from your favorite moments.",
+    "headline": "You matter now. Put it on the record.",
+    "scriptAccent": "your moment, in print",
+    "copy": "Personalized magazines and newspapers that celebrate you while you're here to enjoy it. Shop the issues like a hotel gift shop, or let our team make yours.",
     "coverLines": [
       "The 2026 Yearbook",
       "The Birthday Issue",
@@ -83,15 +83,17 @@
       "label": "How It Works",
       "href": "#how-it-works"
     },
-    "mockupCaption": ""
+    "mockupCaption": "",
+    "showCover": false,
+    "crest": true
   },
   "intro": {
     "heading": "More than a gift. A story worth keeping.",
     "copy": "The inside jokes. The big milestones. The everyday photos you keep coming back to. Bring them together in a keepsake that celebrates your person, your people, or your own next chapter."
   },
   "directory": {
-    "heading": "The Issues.",
-    "copy": "Every issue comes as a magazine or a newspaper, as a DIY Template or Made for You.",
+    "heading": "The Gift Shop.",
+    "copy": "Every issue comes as a magazine or a newspaper, as a DIY Template or Made for You, finished with the club crest.",
     "allLabel": "Everything",
     "detailLinkLabel": "View the issue",
     "noResults": "Nothing in this group yet. Try another category."
@@ -1295,9 +1297,9 @@
     "_help": "Background photos. Put the files in magazine/assets/img/. If a file is missing the page shows a soft butter-and-blue gradient instead.",
     "hero": {
       "src": "assets/img/hero-pool.jpg",
-      "width": 2752,
-      "height": 1536,
-      "alt": "Pool terrace at sunset with powder-blue striped umbrellas, magazines, a butter-yellow feather boa and crystals"
+      "width": 1510,
+      "height": 1142,
+      "alt": "Golden-hour pool terrace with powder-blue striped cabanas, a butter-yellow feather boa, crystal jewelry and glossy magazines on a marble table"
     },
     "editorial": {
       "src": "assets/img/editorial-feather-dress.jpg",

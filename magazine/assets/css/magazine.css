@@ -462,3 +462,10 @@ a[href^="mailto:"] { overflow-wrap: anywhere; }
 
 /* Inquiry section without the schools intro */
 .schools--form-only .schools__grid { grid-template-columns: minmax(0, 1fr); max-width: 760px; margin-inline: auto; }
+
+/* Gift-shop hero: real photo, club crest, panel on the left over the cabanas */
+.hero__crest { width: clamp(84px, 9vw, 120px); height: auto; filter: drop-shadow(0 6px 18px rgba(6,26,34,.35)); }
+.hero--photo .hero__photo { object-position: 72% 70%; }
+.hero__stage--solo { grid-template-columns: minmax(0, 1fr); }
+.cover-lines--solo { justify-content: flex-start; }
+@media (min-width: 900px) { .hero__stage--solo .hero__panel { max-width: 560px; } }

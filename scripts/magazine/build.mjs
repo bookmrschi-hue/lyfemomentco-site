@@ -212,14 +212,15 @@ function issueCover(p, base) {
 function hero() {
   const h = content.hero;
   const lines = (h.coverLines || []).map((l) => `<li>${esc(l)}</li>`).join('');
-  const heroIssue = content.products.find((p) => p.publicationStatus !== 'hidden' && p.slug === (h.featureSlug || 'the-2026-yearbook'));
+  const heroIssue = h.showCover === false ? null : content.products.find((p) => p.publicationStatus !== 'hidden' && p.slug === (h.featureSlug || 'the-2026-yearbook'));
   return `<section class="hero hero--photo" id="top" aria-labelledby="hero-title">
   ${photo('hero', '', { eager: true, cls: 'hero__photo' })}
   <div class="hero__veil" aria-hidden="true"></div>
   <div class="wrap hero__cover">
+    ${h.crest ? `<img class="hero__crest" src="assets/brand/club-crest.svg" width="240" height="280" alt="The Lyfe Moment Club crest">` : ''}
     <p class="hero__issue">${esc(h.eyebrow)}</p>
     <p class="masthead" aria-hidden="true">${esc(h.masthead)}</p>
-    <div class="hero__stage">
+    <div class="hero__stage${heroIssue ? '' : ' hero__stage--solo'}">
     <div class="hero__panel">
       ${sparkle}
       <h1 id="hero-title">${esc(h.headline)}</h1>
@@ -230,6 +231,7 @@ function hero() {
         <a class="btn btn--glass" href="${esc(h.secondaryCta.href)}">${esc(h.secondaryCta.label)}</a>
       </div>
     </div>
+    ${!heroIssue && lines ? `<ul class="cover-lines cover-lines--solo" aria-label="In this issue">${lines}</ul>` : ''}
     ${heroIssue ? `<figure class="hero__magazine"><a href="products/${esc(heroIssue.slug)}/" aria-label="${esc(heroIssue.name)}">${issueCover(heroIssue, '')}</a>${lines ? `<figcaption><ul class="cover-lines" aria-label="In this issue">${lines}</ul></figcaption>` : ''}</figure>` : ''}
     </div>
   </div>
