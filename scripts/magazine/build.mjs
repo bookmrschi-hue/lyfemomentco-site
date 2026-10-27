@@ -246,6 +246,78 @@ function manifesto() {
 </section>`;
 }
 
+function need() {
+  const n = content.need;
+  if (!n) return '';
+  const rows = n.items.map((it) => `<li class="need__item"><p class="need__before">${esc(it.before)}</p><p class="need__after">${esc(it.after)}</p></li>`).join('');
+  return `<section class="need" aria-labelledby="need-title">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">${esc(n.eyebrow)}</p>
+      <h2 id="need-title">${esc(n.heading)}</h2>
+      <p>${esc(n.copy)}</p>
+    </div>
+    <ul class="need__list">${rows}</ul>
+  </div>
+</section>`;
+}
+
+function journeyStory() {
+  const j = content.journeyStory;
+  if (!j) return '';
+  return `<section class="story" aria-labelledby="story-title">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">${esc(j.eyebrow)}</p>
+      <h2 id="story-title">${esc(j.heading)}</h2>
+      <p>${esc(j.copy)}</p>
+    </div>
+    <ol class="story__steps">
+      <li class="story__step">
+        <div class="phone" aria-hidden="true">
+          <div class="phone__bar"><span class="phone__avatar"></span><span class="phone__handle">${esc(j.before.handle)}</span></div>
+          <img class="phone__post" src="assets/img/hero-pool.jpg" width="1510" height="1142" alt="" loading="lazy" decoding="async">
+          <p class="phone__caption">${esc(j.before.caption)}</p>
+          <p class="phone__meta">${esc(j.before.meta)}</p>
+        </div>
+        <h3>${esc(j.before.title)}</h3>
+        <p>${esc(j.before.copy)}</p>
+      </li>
+      <li class="story__step">
+        <div class="spread" aria-hidden="true">
+          <div class="spread__page spread__page--photo"><img src="assets/img/hero-pool.jpg" width="1510" height="1142" alt="" loading="lazy" decoding="async"><span class="spread__folio">Lyfe Moment · 2026</span></div>
+          <div class="spread__page spread__page--text">
+            <p class="spread__kicker">${esc(j.after.kicker)}</p>
+            <p class="spread__headline">${esc(j.after.headline)}</p>
+            <p class="spread__quote">${esc(j.after.quote)}</p>
+            <span class="spread__lines"></span>
+          </div>
+        </div>
+        <h3>${esc(j.after.title)}</h3>
+        <p>${esc(j.after.copy)}</p>
+      </li>
+    </ol>
+    <p class="story__note">${esc(j.note)}</p>
+  </div>
+</section>`;
+}
+
+function team() {
+  const t = content.team;
+  if (!t) return '';
+  const items = t.items.map((it) => `<li class="team__item"><h3>${esc(it.q)}</h3><p>${esc(it.a)}</p></li>`).join('');
+  return `<section class="team" id="discretion" aria-labelledby="team-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">${esc(t.eyebrow)}</p>
+      <h2 id="team-title">${esc(t.heading)}</h2>
+      <p>${esc(t.copy)}</p>
+    </div>
+    <ul class="team__list">${items}</ul>
+  </div>
+</section>`;
+}
+
 function ways() {
   const w = content.ways;
   if (!w) return '';
@@ -620,10 +692,13 @@ ${brandStrip()}
 ${header('', { onLanding: true })}
 <main id="main">
 ${hero()}
+${need()}
+${journeyStory()}
 ${manifesto()}
 ${feature()}
 ${ways()}
 ${directory()}
+${team()}
 ${show('journey') ? journey() : ''}
 ${show('howItWorks') ? howItWorks() : ''}
 ${show('occasions') ? occasions() : ''}
