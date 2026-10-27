@@ -51,8 +51,8 @@
         "href": "#yearbook"
       },
       {
-        "label": "How It Works",
-        "href": "#how-it-works"
+        "label": "Commissions",
+        "href": "#commission"
       },
       {
         "label": "FAQs",
@@ -60,28 +60,28 @@
       }
     ],
     "cta": {
-      "label": "Shop the Issues",
-      "href": "#magazines"
+      "label": "Commission",
+      "href": "#commission"
     }
   },
   "hero": {
-    "eyebrow": "The Lyfe Moment Club · Est. 2026",
+    "eyebrow": "The Lyfe Moment Club",
     "masthead": "Lyfe Moment",
-    "headline": "You matter now. Put it on the record.",
+    "headline": "Your year. Your why. On the record.",
     "scriptAccent": "your moment, in print",
-    "copy": "Personalized magazines and newspapers that celebrate you while you're here to enjoy it. Shop the issues like a hotel gift shop, or let our team make yours.",
+    "copy": "Personalized magazines written and designed around you and the reason you do what you do. Commissioned privately, printed beautifully.",
     "coverLines": [
       "The 2026 Yearbook",
       "The Birthday Issue",
       "DIY or Made for You"
     ],
     "primaryCta": {
-      "label": "Shop the Issues",
-      "href": "#magazines"
+      "label": "Commission your issue",
+      "href": "#commission"
     },
     "secondaryCta": {
-      "label": "How It Works",
-      "href": "#how-it-works"
+      "label": "Explore the Gift Shop",
+      "href": "#magazines"
     },
     "mockupCaption": "",
     "showCover": false,
@@ -93,7 +93,7 @@
   },
   "directory": {
     "heading": "The Gift Shop.",
-    "copy": "Every issue comes as a magazine or a newspaper, as a DIY Template or Made for You, finished with the club crest.",
+    "copy": "Each issue, finished with the club crest.",
     "allLabel": "Everything",
     "detailLinkLabel": "View the issue",
     "noResults": "Nothing in this group yet. Try another category."
@@ -1321,35 +1321,71 @@
     }
   },
   "ways": {
-    "heading": "Two ways to get your issue.",
+    "heading": "Ways to commission.",
+    "copy": "Every issue is a magazine. Add The Headlines for a newspaper of your biggest wins of the year.",
     "items": [
       {
         "id": "diy",
         "title": "DIY Template",
-        "copy": "An editable magazine or newspaper you fill in with your own photos and words. Every page is already designed. Download it and print anywhere."
+        "price": "From $27",
+        "copy": "An editable magazine you fill in with your own photos and words. Every page is already designed."
       },
       {
-        "id": "made",
-        "title": "Made for You",
-        "copy": "Send us your photos and stories. Our team designs your issue, prints it and ships it to your door."
+        "id": "signature",
+        "title": "Signature",
+        "price": "From $295",
+        "copy": "Made for You. We interview you, write your featured article, design your issue and ship a premium softcover."
+      },
+      {
+        "id": "couture",
+        "title": "Couture Hardcover",
+        "price": "From $595",
+        "copy": "Made for You, as a hardcover in a gift box finished with the club crest."
+      },
+      {
+        "id": "headlines",
+        "title": "The Headlines",
+        "price": "Newspaper add-on",
+        "copy": "Your biggest accomplishments of the year, laid out like a front page."
       }
-    ]
+    ],
+    "cta": {
+      "label": "Request a private commission",
+      "href": "#inquiry"
+    }
   },
   "feature": {
     "eyebrow": "Special edition",
     "heading": "The 2026 Yearbook",
     "script": "your year, in print",
-    "copy": "The trips, the wins, the hard seasons and the ordinary days of 2026, gathered into one glossy issue. A month-by-month look back, superlatives for the people in your year, and a page for your wishes for 2027.",
-    "note": "A gift for Christmas, New Year’s Eve and family year-end traditions.",
+    "copy": "Your year, memorialized in one glossy issue. We close the loop on 2026 and open the page on 2027.",
+    "note": "A gift for Christmas, New Year's Eve and year-end celebrations.",
     "cta": {
-      "label": "See the 2026 Yearbook",
+      "label": "Reserve the 2026 Yearbook",
       "href": "products/the-2026-yearbook/"
-    }
+    },
+    "inside": [
+      "Your 2026 goals, checked off",
+      "Your wins, big and small, month by month",
+      "A sit-down interview and a featured article about your year",
+      "Your hopes and goals for 2027"
+    ]
   },
   "landingSections": {
     "_help": "Sections hidden from the page for now. Set to true to show again.",
     "journey": false,
     "occasions": false,
-    "schools": false
+    "schools": false,
+    "howItWorks": false,
+    "publisher": false,
+    "finalCta": false
+  },
+  "manifesto": {
+    "eyebrow": "The Lyfe Moment Club",
+    "heading": "The Y is for you, and your why.",
+    "paragraphs": [
+      "Too many people are only celebrated after they are gone. The executives, creatives, pastors, public servants and athletes who make things happen deserve their cover story now, while they can hold it.",
+      "Each issue puts your year on the record: the goals you kept, the wins big and small, and the reason behind them. Something to set on the table, and something to look back on when you need proof of how far you have come."
+    ]
   }
 }

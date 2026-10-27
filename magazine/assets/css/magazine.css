@@ -14,7 +14,6 @@
   --powder: #A9CBE8;
   --white: #FFFFFF;
   --copper: #0F6E72; /* text-safe turquoise (5.8:1 on white); brand turquoise stays #1BA3A8 */
-  --copper-brand: #775537;
   --turquoise: #1BA3A8;
 
   /* Functional text tokens (accessibility).
@@ -34,7 +33,7 @@
   --font-script: "Damion", "Brush Script MT", cursive;
 
   --step-body: clamp(1.125rem, 1.06rem + 0.28vw, 1.25rem);   /* 18 -> 20px */
-  --step-small: 1rem;                                           /* 16px */
+  --step-small: 1.125rem;                                       /* 18px, brand minimum */
   --step-h1: clamp(2.5rem, 1.55rem + 4.1vw, 5rem);             /* 40 -> 80px */
   --step-h2: clamp(1.875rem, 1.45rem + 1.85vw, 3rem);           /* 30 -> 48px */
   --step-h3: clamp(1.375rem, 1.25rem + 0.5vw, 1.625rem);        /* 22 -> 26px */
@@ -469,3 +468,67 @@ a[href^="mailto:"] { overflow-wrap: anywhere; }
 .hero__stage--solo { grid-template-columns: minmax(0, 1fr); }
 .cover-lines--solo { justify-content: flex-start; }
 @media (min-width: 900px) { .hero__stage--solo .hero__panel { max-width: 560px; } }
+
+/* ==========================================================================
+   Quiet luxury pass (outside design review, 2026-10-27):
+   white by default, butter once (Yearbook), powder once (footer),
+   no shadowed cards on text sections, more air, one message per section.
+   ========================================================================== */
+:root { --section-y: clamp(96px, 10vw, 160px); }
+body { background: #FFFDF6; }
+.wrap--text { width: min(680px, 100% - 2 * var(--gutter)); }
+
+/* Hero: crest, eyebrow, one headline, subhead, two buttons, on a scrim */
+.hero--photo { min-height: min(94vh, 920px); align-items: center; }
+.hero--photo .hero__veil { background:
+  linear-gradient(90deg, rgba(6,26,34,.62) 0%, rgba(6,26,34,.38) 42%, rgba(6,26,34,0) 72%),
+  linear-gradient(180deg, rgba(6,26,34,.25) 0%, rgba(6,26,34,0) 30%, rgba(6,26,34,0) 70%, rgba(6,26,34,.35) 100%); }
+.hero__cover { padding-block: clamp(48px, 8vw, 120px); gap: 18px; justify-items: start; }
+.hero__cover h1 { margin: 0; max-width: none; color: var(--white); font-size: clamp(2.75rem, 1.4rem + 5vw, 5.25rem); line-height: 1.02; font-style: italic; text-shadow: 0 2px 24px rgba(6,26,34,.35); }
+.hero__sub { margin: 0; max-width: 34ch; color: var(--white); font-size: 1.25rem; line-height: 1.55; text-shadow: 0 1px 12px rgba(6,26,34,.45); }
+.hero__cover .actions { margin-top: 10px; }
+.hero__crest { width: clamp(110px, 11vw, 150px); height: auto; }
+.btn--glass { background: rgba(255,255,255,.18); color: var(--white); border: 1.5px solid rgba(255,255,255,.8); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.btn--glass:hover { background: rgba(255,255,255,.32); }
+@media (max-width: 700px) {
+  .hero--photo { min-height: 0; }
+  .hero--photo .hero__veil { background: linear-gradient(180deg, rgba(6,26,34,.55) 0%, rgba(6,26,34,.45) 60%, rgba(6,26,34,.6) 100%); }
+}
+
+/* Manifesto */
+.manifesto { padding: var(--section-y) 0; text-align: center; }
+.manifesto h2 { color: var(--copper); font-style: italic; }
+.manifesto p:not(.eyebrow) { margin-inline: auto; font-size: 1.25rem; line-height: 1.7; }
+
+/* Yearbook feature: the one butter section */
+.feature { background: var(--butter); }
+.feature__panel { box-shadow: 0 18px 50px rgba(16,40,48,.12); }
+.feature__panel .rhinestones { display: none; }
+.feature__panel .ticks { margin: 0 0 1.2em; }
+
+/* Ways to commission: four quiet columns, no cards */
+.ways { background: transparent; }
+.tiers { list-style: none; margin: 0; padding: 0; display: grid; gap: 40px 32px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) { .tiers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1040px) { .tiers { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.tier { border-top: 1.5px solid var(--copper); padding-top: 22px; }
+.tier h3 { color: var(--ink); margin-bottom: .2em; }
+.tier__price { font: italic 600 1.5rem/1.2 var(--font-display); color: var(--copper); margin: 0 0 .5em; }
+.tier p:last-child { margin: 0; }
+.tiers__cta { margin: 48px 0 0; }
+
+/* Gift shop: white, covers do the talking */
+.directory { background: transparent; }
+.product-grid { gap: 48px 28px; }
+.product-card { background: transparent; box-shadow: none; border-radius: 0; overflow: visible; }
+.product-card__art { border-radius: 4px; overflow: hidden; box-shadow: 0 14px 40px rgba(16,40,48,.14); }
+.product-card .issue-cover__line { display: none; }
+.product-card__body { padding: 18px 0 0; }
+.product-card__title { color: var(--ink); }
+
+/* How it works / FAQ / form without boxes */
+.how { background: transparent; }
+.step-card { background: none; box-shadow: none; border-radius: 0; padding: 22px 0 0; border-top: 1.5px solid var(--copper); }
+.schools { background: transparent; }
+.rhinestones { display: none; }
+.hero__panel .rhinestones, .offer .rhinestones { display: block; }

@@ -38,8 +38,8 @@
         <span class="menu-toggle__bars" aria-hidden="true"></span><span>Menu</span>
       </button>
       <div class="site-menu" id="site-menu" data-menu>
-        <ul class="site-menu__links"><li><a href="#magazines">The Gift Shop</a></li><li><a href="#yearbook">2026 Yearbook</a></li><li><a href="#how-it-works">How It Works</a></li><li><a href="#faq">FAQs</a></li></ul>
-        <a class="btn btn--primary btn--nav" href="#magazines">Shop the Issues</a>
+        <ul class="site-menu__links"><li><a href="#magazines">The Gift Shop</a></li><li><a href="#yearbook">2026 Yearbook</a></li><li><a href="#commission">Commissions</a></li><li><a href="#faq">FAQs</a></li></ul>
+        <a class="btn btn--primary btn--nav" href="#commission">Commission</a>
       </div>
     </nav>
   </div>
@@ -49,39 +49,74 @@
   <img class="hero__photo" src="assets/img/hero-pool.jpg" width="1510" height="1142" alt="Golden-hour pool terrace with powder-blue striped cabanas, a butter-yellow feather boa, crystal jewelry and glossy magazines on a marble table" sizes="100vw" fetchpriority="high" decoding="async">
   <div class="hero__veil" aria-hidden="true"></div>
   <div class="wrap hero__cover">
-    <img class="hero__crest" src="assets/brand/club-crest.svg" width="240" height="280" alt="The Lyfe Moment Club crest">
-    <p class="hero__issue">The Lyfe Moment Club · Est. 2026</p>
-    <p class="masthead" aria-hidden="true">Lyfe Moment</p>
-    <div class="hero__stage hero__stage--solo">
-    <div class="hero__panel">
+    <svg class="hero__crest" width="240" height="300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-label="The Lyfe Moment Club crest">
+  <defs>
+    <clipPath id="crest-clip"><path d="M120 34c44 0 76 18 76 18v86c0 58-40 92-76 108-36-16-76-50-76-108V52s32-18 76-18z"/></clipPath>
+    <pattern id="crest-stripes" width="24" height="10" patternUnits="userSpaceOnUse"><rect width="12" height="10" fill="#FBE29D"/><rect x="12" width="12" height="10" fill="#fff"/></pattern>
+  </defs>
+  <g fill="#fff" stroke="#A9CBE8" stroke-width="2">
+    <circle cx="96" cy="20" r="5"/><circle cx="108" cy="14" r="5.5"/><circle cx="120" cy="11" r="6.5"/><circle cx="132" cy="14" r="5.5"/><circle cx="144" cy="20" r="5"/>
+  </g>
+  <path d="M120 34c44 0 76 18 76 18v86c0 58-40 92-76 108-36-16-76-50-76-108V52s32-18 76-18z" fill="#A9CBE8"/>
+  <rect x="44" y="34" width="152" height="220" fill="url(#crest-stripes)" clip-path="url(#crest-clip)" opacity=".9"/>
+  <path d="M120 34c44 0 76 18 76 18v86c0 58-40 92-76 108-36-16-76-50-76-108V52s32-18 76-18z" fill="none" stroke="#0F6E72" stroke-width="5"/>
+  <path d="M120 46c38 0 66 15 66 15v77c0 51-35 81-66 95-31-14-66-44-66-95V61s28-15 66-15z" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round"/>
+  <ellipse cx="120" cy="134" rx="50" ry="44" fill="#fff" stroke="#A9CBE8" stroke-width="3"/>
+  <text x="120" y="152" text-anchor="middle" font-family="Damion, 'Brush Script MT', cursive" font-size="56" fill="#0F6E72">LM</text>
+  <path d="M30 222h180l-12 14 12 14H30l12-14z" fill="#0F6E72"/>
+  <text x="120" y="241" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="16" font-weight="600" fill="#fff">The Lyfe Moment Club</text>
+  <rect x="14" y="258" width="212" height="30" rx="15" fill="#FBE29D" stroke="#0F6E72" stroke-width="2.5"/>
+  <text x="120" y="278" text-anchor="middle" font-family="Jost, Arial, sans-serif" font-weight="600" font-size="13" letter-spacing=".2" fill="#0B5558">Est. 2026 · You Matter, Now</text>
+</svg>
+
+    <p class="hero__issue">The Lyfe Moment Club</p>
+    <h1 id="hero-title">Your year.<br>Your why.<br>On the record.</h1>
+    <p class="hero__sub">Personalized magazines written and designed around you and the reason you do what you do. Commissioned privately, printed beautifully.</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="#commission">Commission your issue</a>
+      <a class="btn btn--glass" href="#magazines">Explore the Gift Shop</a>
+    </div>
+  </div>
+</section>
+<section class="manifesto" aria-labelledby="manifesto-title">
+  <div class="wrap wrap--text">
+    <p class="eyebrow">The Lyfe Moment Club</p>
+    <h2 id="manifesto-title">The Y is for you, and your why.</h2>
+    <p>Too many people are only celebrated after they are gone. The executives, creatives, pastors, public servants and athletes who make things happen deserve their cover story now, while they can hold it.</p>
+    <p>Each issue puts your year on the record: the goals you kept, the wins big and small, and the reason behind them. Something to set on the table, and something to look back on when you need proof of how far you have come.</p>
+  </div>
+</section>
+<section class="feature" id="yearbook" aria-labelledby="feature-title">
+  <div class="feature__photo photo-fallback photo-fallback--editorial" role="img" aria-label="A woman in a butter-yellow and powder-blue feather dress with crystal trim, poolside at sunset"></div>
+  <div class="feature__veil" aria-hidden="true"></div>
+  <div class="wrap feature__inner">
+    <div class="feature__panel">
       <span class="rhinestones" aria-hidden="true"></span>
-      <h1 id="hero-title">You matter now. Put it on the record.</h1>
-      <p class="hero__script" aria-hidden="true">your moment, in print</p>
-      <p class="lede">Personalized magazines and newspapers that celebrate you while you're here to enjoy it. Shop the issues like a hotel gift shop, or let our team make yours.</p>
-      <div class="actions">
-        <a class="btn btn--primary" href="#magazines">Shop the Issues</a>
-        <a class="btn btn--glass" href="#how-it-works">How It Works</a>
-      </div>
-    </div>
-    <ul class="cover-lines cover-lines--solo" aria-label="In this issue"><li>The 2026 Yearbook</li><li>The Birthday Issue</li><li>DIY or Made for You</li></ul>
-    
+      <p class="eyebrow">Special edition</p>
+      <h2 id="feature-title">The 2026 Yearbook</h2>
+      <p class="feature__script" aria-hidden="true">your year, in print</p>
+      <p>Your year, memorialized in one glossy issue. We close the loop on 2026 and open the page on 2027.</p>
+      <ul class="ticks"><li>Your 2026 goals, checked off</li><li>Your wins, big and small, month by month</li><li>A sit-down interview and a featured article about your year</li><li>Your hopes and goals for 2027</li></ul>
+      <p class="feature__note">A gift for Christmas, New Year's Eve and year-end celebrations.</p>
+      <a class="btn btn--primary" href="products/the-2026-yearbook/">Reserve the 2026 Yearbook</a>
     </div>
   </div>
 </section>
-<section class="ways" aria-labelledby="ways-title">
-  <div class="wrap ways__grid">
-    <div class="ways__photo"><div class="cover-photo photo-fallback photo-fallback--hands" role="img" aria-label="Hands holding a glossy personalized magazine by the pool"></div></div>
-    <div class="ways__text">
-      <h2 id="ways-title">Two ways to get your issue.</h2>
-      <ul class="ways__list"><li class="way"><h3>DIY Template</h3><p>An editable magazine or newspaper you fill in with your own photos and words. Every page is already designed. Download it and print anywhere.</p></li><li class="way"><h3>Made for You</h3><p>Send us your photos and stories. Our team designs your issue, prints it and ships it to your door.</p></li></ul>
+<section class="ways" id="commission" aria-labelledby="ways-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="ways-title">Ways to commission.</h2>
+      <p>Every issue is a magazine. Add The Headlines for a newspaper of your biggest wins of the year.</p>
     </div>
+    <ul class="tiers"><li class="tier"><h3>DIY Template</h3><p class="tier__price">From $27</p><p>An editable magazine you fill in with your own photos and words. Every page is already designed.</p></li><li class="tier"><h3>Signature</h3><p class="tier__price">From $295</p><p>Made for You. We interview you, write your featured article, design your issue and ship a premium softcover.</p></li><li class="tier"><h3>Couture Hardcover</h3><p class="tier__price">From $595</p><p>Made for You, as a hardcover in a gift box finished with the club crest.</p></li><li class="tier"><h3>The Headlines</h3><p class="tier__price">Newspaper add-on</p><p>Your biggest accomplishments of the year, laid out like a front page.</p></li></ul>
+    <p class="tiers__cta"><a class="btn btn--primary" href="#inquiry">Request a private commission</a></p>
   </div>
 </section>
-<section class="directory band-blue" id="magazines" aria-labelledby="directory-title">
+<section class="directory" id="magazines" aria-labelledby="directory-title">
   <div class="wrap">
     <div class="section-head">
       <h2 id="directory-title">The Gift Shop.</h2>
-      <p>Every issue comes as a magazine or a newspaper, as a DIY Template or Made for You, finished with the club crest.</p>
+      <p>Each issue, finished with the club crest.</p>
     </div>
     
     <p class="visually-hidden" role="status" aria-live="polite" data-filter-status></p>
@@ -95,10 +130,8 @@
     <span class="issue-cover__tag">Sample cover</span>
   </div></div>
           <div class="product-card__body">
-            <p class="product-card__category">Magazine or Newspaper</p>
             <h3 class="product-card__title">The 2026 Yearbook</h3>
             <p class="product-card__desc">Your year, personalized like a yearbook made only for you.</p>
-            <span class="product-card__more">View the issue<span class="visually-hidden">: The 2026 Yearbook</span> <span aria-hidden="true">&rarr;</span></span>
           </div>
         </a>
       </li>
@@ -111,10 +144,8 @@
     <span class="issue-cover__tag">Sample cover</span>
   </div></div>
           <div class="product-card__body">
-            <p class="product-card__category">Magazine or Newspaper</p>
             <h3 class="product-card__title">The Birthday Issue</h3>
             <p class="product-card__desc">Their year, their face on the cover, their story in print.</p>
-            <span class="product-card__more">View the issue<span class="visually-hidden">: The Birthday Issue</span> <span aria-hidden="true">&rarr;</span></span>
           </div>
         </a>
       </li>
@@ -127,10 +158,8 @@
     <span class="issue-cover__tag">Sample cover</span>
   </div></div>
           <div class="product-card__body">
-            <p class="product-card__category">Magazine or Newspaper</p>
             <h3 class="product-card__title">The Love Issue</h3>
             <p class="product-card__desc">Your love story, written like it deserves a front page.</p>
-            <span class="product-card__more">View the issue<span class="visually-hidden">: The Love Issue</span> <span aria-hidden="true">&rarr;</span></span>
           </div>
         </a>
       </li>
@@ -143,10 +172,8 @@
     <span class="issue-cover__tag">Sample cover</span>
   </div></div>
           <div class="product-card__body">
-            <p class="product-card__category">Magazine or Newspaper</p>
             <h3 class="product-card__title">The Best Friends Issue</h3>
             <p class="product-card__desc">For the friend who was there for every chapter.</p>
-            <span class="product-card__more">View the issue<span class="visually-hidden">: The Best Friends Issue</span> <span aria-hidden="true">&rarr;</span></span>
           </div>
         </a>
       </li>
@@ -159,10 +186,8 @@
     <span class="issue-cover__tag">Sample cover</span>
   </div></div>
           <div class="product-card__body">
-            <p class="product-card__category">Magazine or Newspaper</p>
             <h3 class="product-card__title">The Wedding Issue</h3>
             <p class="product-card__desc">The whole day, from getting ready to last dance, in print.</p>
-            <span class="product-card__more">View the issue<span class="visually-hidden">: The Wedding Issue</span> <span aria-hidden="true">&rarr;</span></span>
           </div>
         </a>
       </li>
@@ -175,10 +200,8 @@
     <span class="issue-cover__tag">Sample cover</span>
   </div></div>
           <div class="product-card__body">
-            <p class="product-card__category">Magazine or Newspaper</p>
             <h3 class="product-card__title">The First Year Issue</h3>
             <p class="product-card__desc">Twelve months of firsts, kept in one place.</p>
-            <span class="product-card__more">View the issue<span class="visually-hidden">: The First Year Issue</span> <span aria-hidden="true">&rarr;</span></span>
           </div>
         </a>
       </li>
@@ -186,49 +209,22 @@
     <p class="empty-state" data-empty hidden>Nothing in this group yet. Try another category.</p>
   </div>
 </section>
-<section class="feature" id="yearbook" aria-labelledby="feature-title">
-  <div class="feature__photo photo-fallback photo-fallback--editorial" role="img" aria-label="A woman in a butter-yellow and powder-blue feather dress with crystal trim, poolside at sunset"></div>
-  <div class="feature__veil" aria-hidden="true"></div>
-  <div class="wrap feature__inner">
-    <div class="feature__panel">
-      <span class="rhinestones" aria-hidden="true"></span>
-      <p class="eyebrow">Special edition</p>
-      <h2 id="feature-title">The 2026 Yearbook</h2>
-      <p class="feature__script" aria-hidden="true">your year, in print</p>
-      <p>The trips, the wins, the hard seasons and the ordinary days of 2026, gathered into one glossy issue. A month-by-month look back, superlatives for the people in your year, and a page for your wishes for 2027.</p>
-      <p class="feature__note">A gift for Christmas, New Year’s Eve and family year-end traditions.</p>
-      <a class="btn btn--primary" href="products/the-2026-yearbook/">See the 2026 Yearbook</a>
-    </div>
-  </div>
-</section>
 
-<section class="how band-blue" id="how-it-works" aria-labelledby="how-title">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 id="how-title">From your camera roll to a cover story.</h2>
-    </div>
-    <ol class="steps"><li class="step-card"><span class="step-card__num" aria-hidden="true">1</span><h3>Choose your issue.</h3><p>Pick the occasion, then a magazine or a newspaper.</p></li><li class="step-card"><span class="step-card__num" aria-hidden="true">2</span><h3>Gather your story.</h3><p>Collect the photos, names, messages and memories you want inside.</p></li><li class="step-card"><span class="step-card__num" aria-hidden="true">3</span><h3>Make it yours, or let us.</h3><p>Fill in the DIY Template yourself, or send everything to us and we design, print and ship it.</p></li></ol>
-  </div>
-</section>
 
-<section class="publisher" id="publisher" aria-labelledby="publisher-title">
-  <div class="wrap">
-    <div class="publisher__panel">
-      <div class="publisher__logo">
-        <picture>
-          <source srcset="assets/brand/bread-of-lyfe-publishing-logo.webp" type="image/webp">
-          <img src="assets/brand/bread-of-lyfe-publishing-logo.png" width="447" height="447" alt="Bread of Lyfe Publishing" loading="lazy" decoding="async">
-        </picture>
-      </div>
-      <div class="publisher__text">
-        <h2 id="publisher-title">Personal stories, thoughtfully presented.</h2>
-        <p>Lyfe Moment Co. celebrates the details that make a moment yours. This publishing collection brings that same spirit to personalized magazines and keepsakes, with space for your photos, your words, and your point of view.</p>
-        <p class="publisher__credit">A publishing collection by Bread of Lyfe Publishing.</p>
-      </div>
+
+
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap wrap--narrow">
+    <div class="faq__panel">
+      <h2 id="faq-title">Questions, answered.</h2>
+      <details class="faq__item"><summary><h3>What can I personalize?</h3></summary><div class="faq__answer"><p>Photos, names, messages, and the details that make the story yours, such as captions, favorite quotes, and inside jokes. Each keepsake page lists what can be personalized for that format.</p></div></details>
+      <details class="faq__item"><summary><h3>What photos and text should I prepare?</h3></summary><div class="faq__answer"><p>Start by gathering your favorite photos of the person or group, with the clearest, best-lit versions you have. Write down names exactly as they should appear, along with any messages, dates, or memories you want to include. It helps to choose a few favorites to lead with, like a cover photo.</p></div></details>
+      <details class="faq__item"><summary><h3>Can I create a magazine as a gift?</h3></summary><div class="faq__answer"><p>Yes. These keepsakes are designed with gifting in mind, whether it is for a birthday, an anniversary, a graduation, or simply someone you want to celebrate.</p></div></details>
+      <p class="faq__more">Have a question we have not answered yet? Email <a href="mailto:breadoflyfepublishing@gmail.com">breadoflyfepublishing@gmail.com</a> or use the <a href="#inquiry">publishing inquiry form</a>.</p>
     </div>
   </div>
 </section>
-<section class="schools band-blue schools--form-only" id="schools" aria-label="Tell us about your project.">
+<section class="schools schools--form-only" id="schools" aria-label="Tell us about your project.">
   <div class="wrap schools__grid">
     
     <div class="form-panel" id="inquiry" tabindex="-1">
@@ -305,29 +301,7 @@
   </div>
   <script type="application/json" id="form-messages">{"success":"Thank you. Your inquiry has been received. Your reference is","previewSuccess":"Your answers look complete. Because this page is a preview, nothing was sent or saved. Please email us to start a conversation.","error":"Sorry, your inquiry could not be sent right now and nothing was saved. Please try again in a few minutes or email","notConfigured":"This form is not connected yet, so nothing was saved. Please email","rateLimited":"Too many attempts from this connection. Please wait a little and try again, or email","fixErrors":"Please check the highlighted fields.","sending":"Sending...","submit":"Send inquiry","emailGeneral":"hello@lyfemoment.store","emailPublishing":"breadoflyfepublishing@gmail.com"}</script>
 </section>
-<section class="faq" id="faq" aria-labelledby="faq-title">
-  <div class="wrap wrap--narrow">
-    <div class="faq__panel">
-      <h2 id="faq-title">Questions, answered.</h2>
-      <details class="faq__item"><summary><h3>What can I personalize?</h3></summary><div class="faq__answer"><p>Photos, names, messages, and the details that make the story yours, such as captions, favorite quotes, and inside jokes. Each keepsake page lists what can be personalized for that format.</p></div></details>
-      <details class="faq__item"><summary><h3>What photos and text should I prepare?</h3></summary><div class="faq__answer"><p>Start by gathering your favorite photos of the person or group, with the clearest, best-lit versions you have. Write down names exactly as they should appear, along with any messages, dates, or memories you want to include. It helps to choose a few favorites to lead with, like a cover photo.</p></div></details>
-      <details class="faq__item"><summary><h3>Can I create a magazine as a gift?</h3></summary><div class="faq__answer"><p>Yes. These keepsakes are designed with gifting in mind, whether it is for a birthday, an anniversary, a graduation, or simply someone you want to celebrate.</p></div></details>
-      <p class="faq__more">Have a question we have not answered yet? Email <a href="mailto:breadoflyfepublishing@gmail.com">breadoflyfepublishing@gmail.com</a> or use the <a href="#inquiry">publishing inquiry form</a>.</p>
-    </div>
-  </div>
-</section>
-<section class="final" aria-labelledby="final-title">
-  <div class="wrap">
-    <div class="final__panel">
-      <h2 id="final-title">Every moment deserves a cover.</h2>
-      <p>Choose your issue, gather your favorite photos, and make it yours.</p>
-      <div class="actions actions--center">
-        <a class="btn btn--primary" href="#magazines">Shop the Issues</a>
-        <a class="btn btn--secondary" href="#inquiry">Ask a Publishing Question</a>
-      </div>
-    </div>
-  </div>
-</section>
+
 </main>
 <footer class="site-footer">
   <div class="stripe-band stripe-band--blue" aria-hidden="true"></div>

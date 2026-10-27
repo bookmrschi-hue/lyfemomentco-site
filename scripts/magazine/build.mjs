@@ -209,31 +209,39 @@ function issueCover(p, base) {
 
 // ---------- landing page sections ----------
 
+// Inline so the crest text uses the page's web fonts.
+function crestSvg() {
+  const svg = readFileSync(join(MAG, 'assets/brand/club-crest.svg'), 'utf8')
+    .replace('<svg ', '<svg class="hero__crest" width="240" height="300" ');
+  return svg;
+}
+
 function hero() {
   const h = content.hero;
-  const lines = (h.coverLines || []).map((l) => `<li>${esc(l)}</li>`).join('');
-  const heroIssue = h.showCover === false ? null : content.products.find((p) => p.publicationStatus !== 'hidden' && p.slug === (h.featureSlug || 'the-2026-yearbook'));
   return `<section class="hero hero--photo" id="top" aria-labelledby="hero-title">
   ${photo('hero', '', { eager: true, cls: 'hero__photo' })}
   <div class="hero__veil" aria-hidden="true"></div>
   <div class="wrap hero__cover">
-    ${h.crest ? `<img class="hero__crest" src="assets/brand/club-crest.svg" width="240" height="280" alt="The Lyfe Moment Club crest">` : ''}
+    ${h.crest ? crestSvg() : ''}
     <p class="hero__issue">${esc(h.eyebrow)}</p>
-    <p class="masthead" aria-hidden="true">${esc(h.masthead)}</p>
-    <div class="hero__stage${heroIssue ? '' : ' hero__stage--solo'}">
-    <div class="hero__panel">
-      ${sparkle}
-      <h1 id="hero-title">${esc(h.headline)}</h1>
-      <p class="hero__script" aria-hidden="true">${esc(h.scriptAccent)}</p>
-      <p class="lede">${esc(h.copy)}</p>
-      <div class="actions">
-        <a class="btn btn--primary" href="${esc(h.primaryCta.href)}">${esc(h.primaryCta.label)}</a>
-        <a class="btn btn--glass" href="${esc(h.secondaryCta.href)}">${esc(h.secondaryCta.label)}</a>
-      </div>
+    <h1 id="hero-title">${h.headline.split(/(?<=\.)\s+/).map(esc).join('<br>')}</h1>
+    <p class="hero__sub">${esc(h.copy)}</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="${esc(h.primaryCta.href)}">${esc(h.primaryCta.label)}</a>
+      <a class="btn btn--glass" href="${esc(h.secondaryCta.href)}">${esc(h.secondaryCta.label)}</a>
     </div>
-    ${!heroIssue && lines ? `<ul class="cover-lines cover-lines--solo" aria-label="In this issue">${lines}</ul>` : ''}
-    ${heroIssue ? `<figure class="hero__magazine"><a href="products/${esc(heroIssue.slug)}/" aria-label="${esc(heroIssue.name)}">${issueCover(heroIssue, '')}</a>${lines ? `<figcaption><ul class="cover-lines" aria-label="In this issue">${lines}</ul></figcaption>` : ''}</figure>` : ''}
-    </div>
+  </div>
+</section>`;
+}
+
+function manifesto() {
+  const m = content.manifesto;
+  if (!m) return '';
+  return `<section class="manifesto" aria-labelledby="manifesto-title">
+  <div class="wrap wrap--text">
+    <p class="eyebrow">${esc(m.eyebrow)}</p>
+    <h2 id="manifesto-title">${esc(m.heading)}</h2>
+    ${m.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('\n    ')}
   </div>
 </section>`;
 }
@@ -241,14 +249,15 @@ function hero() {
 function ways() {
   const w = content.ways;
   if (!w) return '';
-  const items = w.items.map((it) => `<li class="way"><h3>${esc(it.title)}</h3><p>${esc(it.copy)}</p></li>`).join('');
-  return `<section class="ways" aria-labelledby="ways-title">
-  <div class="wrap ways__grid">
-    <div class="ways__photo">${photo('hands', '', { cls: 'cover-photo', sizes: '(min-width: 900px) 45vw, 92vw' })}</div>
-    <div class="ways__text">
+  const items = w.items.map((it) => `<li class="tier"><h3>${esc(it.title)}</h3>${it.price ? `<p class="tier__price">${esc(it.price)}</p>` : ''}<p>${esc(it.copy)}</p></li>`).join('');
+  return `<section class="ways" id="commission" aria-labelledby="ways-title">
+  <div class="wrap">
+    <div class="section-head">
       <h2 id="ways-title">${esc(w.heading)}</h2>
-      <ul class="ways__list">${items}</ul>
+      ${w.copy ? `<p>${esc(w.copy)}</p>` : ''}
     </div>
+    <ul class="tiers">${items}</ul>
+    ${w.cta ? `<p class="tiers__cta"><a class="btn btn--primary" href="${esc(w.cta.href)}">${esc(w.cta.label)}</a></p>` : ''}
   </div>
 </section>`;
 }
@@ -266,6 +275,7 @@ function feature() {
       <h2 id="feature-title">${esc(f.heading)}</h2>
       <p class="feature__script" aria-hidden="true">${esc(f.script)}</p>
       <p>${esc(f.copy)}</p>
+      ${f.inside ? `<ul class="ticks">${f.inside.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
       <p class="feature__note">${esc(f.note)}</p>
       <a class="btn btn--primary" href="${esc(f.cta.href)}">${esc(f.cta.label)}</a>
     </div>
@@ -297,15 +307,13 @@ function directory() {
         <a class="product-card__link" href="products/${esc(p.slug)}/">
           <div class="product-card__art">${issueCover(p, '')}</div>
           <div class="product-card__body">
-            <p class="product-card__category">${esc((p.formats || [categoryLabel[p.category]]).join(' or '))}</p>
             <h3 class="product-card__title">${esc(p.name)}</h3>
             <p class="product-card__desc">${esc(p.shortDescription)}</p>
-            <span class="product-card__more">${esc(d.detailLinkLabel)}<span class="visually-hidden">: ${esc(p.name)}</span> <span aria-hidden="true">&rarr;</span></span>
           </div>
         </a>
       </li>`)
     .join('\n      ');
-  return `<section class="directory band-blue" id="magazines" aria-labelledby="directory-title">
+  return `<section class="directory" id="magazines" aria-labelledby="directory-title">
   <div class="wrap">
     <div class="section-head">
       <h2 id="directory-title">${esc(d.heading)}</h2>
@@ -379,7 +387,7 @@ function howItWorks() {
   const steps = h.steps
     .map((s, i) => `<li class="step-card"><span class="step-card__num" aria-hidden="true">${i + 1}</span><h3>${esc(s.title)}</h3><p>${esc(s.copy)}</p></li>`)
     .join('');
-  return `<section class="how band-blue" id="how-it-works" aria-labelledby="how-title">
+  return `<section class="how" id="how-it-works" aria-labelledby="how-title">
   <div class="wrap">
     <div class="section-head">
       <h2 id="how-title">${esc(h.heading)}</h2>
@@ -449,7 +457,7 @@ function inquiry() {
       ${booking}
     </div>`
     : '';
-  return `<section class="schools band-blue${intro ? '' : ' schools--form-only'}" id="schools" aria-label="${esc(f.heading)}">
+  return `<section class="schools${intro ? '' : ' schools--form-only'}" id="schools" aria-label="${esc(f.heading)}">
   <div class="wrap schools__grid">
     ${intro}
     <div class="form-panel" id="${esc(f.id)}" tabindex="-1">
@@ -612,16 +620,17 @@ ${brandStrip()}
 ${header('', { onLanding: true })}
 <main id="main">
 ${hero()}
+${manifesto()}
+${feature()}
 ${ways()}
 ${directory()}
-${feature()}
 ${show('journey') ? journey() : ''}
-${howItWorks()}
+${show('howItWorks') ? howItWorks() : ''}
 ${show('occasions') ? occasions() : ''}
-${publisher()}
-${inquiry()}
+${show('publisher') ? publisher() : ''}
 ${faq()}
-${finalCta()}
+${inquiry()}
+${show('finalCta') ? finalCta() : ''}
 </main>
 ${footer('')}
 <script src="assets/js/magazine.js?v=${assetVersion}" defer></script>

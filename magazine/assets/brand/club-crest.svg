@@ -1,18 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 280" role="img" aria-label="The Lyfe Moment Club crest">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-label="The Lyfe Moment Club crest">
   <defs>
-    <clipPath id="c"><path d="M120 34c44 0 76 18 76 18v86c0 58-40 92-76 108-36-16-76-50-76-108V52s32-18 76-18z"/></clipPath>
-    <pattern id="s" width="24" height="10" patternUnits="userSpaceOnUse"><rect width="12" height="10" fill="#FBE29D"/><rect x="12" width="12" height="10" fill="#fff"/></pattern>
+    <clipPath id="crest-clip"><path d="M120 34c44 0 76 18 76 18v86c0 58-40 92-76 108-36-16-76-50-76-108V52s32-18 76-18z"/></clipPath>
+    <pattern id="crest-stripes" width="24" height="10" patternUnits="userSpaceOnUse"><rect width="12" height="10" fill="#FBE29D"/><rect x="12" width="12" height="10" fill="#fff"/></pattern>
   </defs>
   <g fill="#fff" stroke="#A9CBE8" stroke-width="2">
     <circle cx="96" cy="20" r="5"/><circle cx="108" cy="14" r="5.5"/><circle cx="120" cy="11" r="6.5"/><circle cx="132" cy="14" r="5.5"/><circle cx="144" cy="20" r="5"/>
   </g>
   <path d="M120 34c44 0 76 18 76 18v86c0 58-40 92-76 108-36-16-76-50-76-108V52s32-18 76-18z" fill="#A9CBE8"/>
-  <rect x="44" y="34" width="152" height="220" fill="url(#s)" clip-path="url(#c)" opacity=".9"/>
+  <rect x="44" y="34" width="152" height="220" fill="url(#crest-stripes)" clip-path="url(#crest-clip)" opacity=".9"/>
   <path d="M120 34c44 0 76 18 76 18v86c0 58-40 92-76 108-36-16-76-50-76-108V52s32-18 76-18z" fill="none" stroke="#0F6E72" stroke-width="5"/>
   <path d="M120 46c38 0 66 15 66 15v77c0 51-35 81-66 95-31-14-66-44-66-95V61s28-15 66-15z" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="1 6" stroke-linecap="round"/>
   <ellipse cx="120" cy="134" rx="50" ry="44" fill="#fff" stroke="#A9CBE8" stroke-width="3"/>
   <text x="120" y="152" text-anchor="middle" font-family="Damion, 'Brush Script MT', cursive" font-size="56" fill="#0F6E72">LM</text>
   <path d="M30 222h180l-12 14 12 14H30l12-14z" fill="#0F6E72"/>
-  <text x="120" y="241" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="15" fill="#fff">The Lyfe Moment Club</text>
-  <text x="120" y="274" text-anchor="middle" font-family="Jost, Arial, sans-serif" font-size="13" letter-spacing="2" fill="#0F6E72">Est. 2026 · You Matter, Now</text>
+  <text x="120" y="241" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="16" font-weight="600" fill="#fff">The Lyfe Moment Club</text>
+  <rect x="14" y="258" width="212" height="30" rx="15" fill="#FBE29D" stroke="#0F6E72" stroke-width="2.5"/>
+  <text x="120" y="278" text-anchor="middle" font-family="Jost, Arial, sans-serif" font-weight="600" font-size="13" letter-spacing=".2" fill="#0B5558">Est. 2026 · You Matter, Now</text>
 </svg>

@@ -30,7 +30,7 @@ async function run(browserType, label) {
     check(`${label} ${w}px no horizontal overflow`, overflow <= 0, `${overflow}px`);
     const clipped = await page.evaluate(() => [...document.querySelectorAll('h1,h2,h3,p,a,button,label')].filter((el) => el.offsetParent && !el.closest('.visually-hidden, .hp') && el.scrollWidth > el.clientWidth + 1 && getComputedStyle(el).overflow !== 'visible').length);
     check(`${label} ${w}px no clipped text`, clipped === 0, `${clipped}`);
-    const bodySize = await page.evaluate(() => parseFloat(getComputedStyle(document.querySelector('.lede')).fontSize));
+    const bodySize = await page.evaluate(() => parseFloat(getComputedStyle(document.querySelector('.hero__sub, .lede')).fontSize));
     check(`${label} ${w}px body copy >= 18px`, bodySize >= 18, `${bodySize}px`);
     const smallTargets = await page.evaluate(() => [...document.querySelectorAll('main a.btn, main button:not(.page-thumb), .site-header a, .site-header button')]
       .filter((el) => el.offsetParent).filter((el) => el.getBoundingClientRect().height < 44).map((el) => el.textContent.trim().slice(0, 30)));
