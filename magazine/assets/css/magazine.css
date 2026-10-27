@@ -532,3 +532,5 @@ body { background: #FFFDF6; }
 .schools { background: transparent; }
 .rhinestones { display: none; }
 .hero__panel .rhinestones, .offer .rhinestones { display: block; }
+/* Launch shows two issues: the Yearbook and the Birthday Issue */
+@media (min-width: 640px) { .directory .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 880px; } }

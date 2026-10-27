@@ -55,8 +55,8 @@ async function run(browserType, label) {
     if (w === 390 || w === 1280) {
       // Only the six magazine & newspaper issues are listed
       const cards = await page.locator('.product-card:visible').count();
-      const hiddenShown = await page.locator('[data-product="photo-strips"], [data-product="custom-magazine"]').count();
-      check(`${label} ${w}px six issues listed, hidden products absent`, cards === 6 && hiddenShown === 0, `${cards} cards`);
+      const hiddenShown = await page.locator('[data-product="photo-strips"], [data-product="the-love-issue"]').count();
+      check(`${label} ${w}px launch issues listed, hidden products absent`, cards === 2 && hiddenShown === 0, `${cards} cards`);
 
       // FAQ accordion
       const det = page.locator('.faq__item').first();
@@ -75,7 +75,7 @@ async function run(browserType, label) {
       page.on('request', (r) => { if (r.method() === 'POST') posts.push(r.url()); });
       await page.fill('#f-name', 'QA Preview');
       await page.fill('#f-email', 'qa@example.com');
-      await page.selectOption('#f-interest', 'the-love-issue');
+      await page.selectOption('#f-interest', 'the-birthday-issue');
       await page.selectOption('#f-occasion', 'birthdays');
       await page.fill('#f-notes', '[TEST] preview mode check');
       await page.check('#f-privacy');
@@ -112,10 +112,10 @@ async function run(browserType, label) {
   }
   const r404 = await p2.goto(BASE + '/magazine/products/does-not-exist/');
   check(`${label} unknown product returns 404`, r404.status() === 404);
-  await p2.goto(`${BASE}/magazine/products/the-love-issue/`);
+  await p2.goto(`${BASE}/magazine/products/the-birthday-issue/`);
   await p2.locator('a', { hasText: 'Ask about this issue' }).click();
   await p2.waitForLoadState('networkidle');
-  check(`${label} product page CTA preselects interest`, (await p2.locator('#f-interest').inputValue()) === 'the-love-issue');
+  check(`${label} product page CTA preselects interest`, (await p2.locator('#f-interest').inputValue()) === 'the-birthday-issue');
   // Every internal link resolves
   await p2.goto(`${BASE}/magazine/`);
   const links = await p2.evaluate(() => [...new Set([...document.querySelectorAll('a[href]')].map((a) => a.href).filter((h) => h.startsWith(location.origin)))]);
