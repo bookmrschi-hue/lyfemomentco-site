@@ -1,11 +1,16 @@
 {
   "name": "lyfemomentco",
   "version": "1.0.0",
-  "description": "Lyfe Moment Co. — celebration decorations & personalized yearbooks",
+  "description": "Lyfe Moment Co. \u2014 celebration decorations & personalized yearbooks",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "build:magazine": "node scripts/magazine/build.mjs",
+    "check:magazine": "node scripts/magazine/build.mjs --check",
+    "social:magazine": "node scripts/magazine/render-social.mjs",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node scripts/magazine/browser-qa.mjs"
   },
   "dependencies": {
     "dotenv": "^16.4.5",

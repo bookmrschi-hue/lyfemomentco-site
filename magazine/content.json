@@ -1,0 +1,495 @@
+{
+  "_readme": "Edit the words, products, FAQs and contact details for the magazine page here, then run `npm run build:magazine` (or push to GitHub and the build workflow regenerates the page). See docs/magazine/EDITING.md.",
+
+  "site": {
+    "shopName": "Lyfe Moment Co.",
+    "publisherName": "Bread of Lyfe Publishing",
+    "tagline": "Honor Your Lyfe Moment.",
+    "productionOrigin": "https://lyfemoment.store",
+    "pagePath": "/magazine/",
+    "homePath": "/",
+    "emailGeneral": "hello@lyfemoment.store",
+    "emailPublishing": "breadoflyfepublishing@gmail.com",
+    "socialHandle": "@LyfeMomentCo",
+    "basedIn": { "city": "Corona", "region": "CA", "country": "US" },
+    "indexing": "staging",
+    "_indexingHelp": "Leave as \"staging\" until launch. \"staging\" adds noindex to every magazine page and keeps it out of sitemap.xml. Change to \"production\" only when the page is approved and live at lyfemoment.store/magazine/.",
+    "analytics": {
+      "ga4MeasurementId": "",
+      "googleSiteVerification": "",
+      "pinterestDomainVerification": "",
+      "_help": "Paste only real IDs from your own accounts. Empty means no script or tag is added."
+    },
+    "booking": {
+      "calendlyUrl": "",
+      "verified": false,
+      "_help": "A booking button appears only when a URL is filled in AND verified is true. Until then visitors use the publishing inquiry form."
+    }
+  },
+
+  "seo": {
+    "title": "Personalized Magazines & Keepsakes | Lyfe Moment Co.",
+    "description": "Celebrate birthdays, anniversaries, graduations, and everyday memories with personalized magazine and keepsake ideas from Lyfe Moment Co.",
+    "ogImage": "assets/social/og-magazine.jpg",
+    "ogImageWidth": 1200,
+    "ogImageHeight": 630,
+    "ogImageAlt": "Lyfe Moment Co. personalized magazines: a sample cover on butter yellow with powder blue cabana stripes."
+  },
+
+  "brandStrip": { "text": "Honor Your Lyfe Moment." },
+
+  "nav": {
+    "links": [
+      { "label": "Magazines", "href": "#magazines" },
+      { "label": "How It Works", "href": "#how-it-works" },
+      { "label": "Explore Occasions", "href": "#occasions" },
+      { "label": "FAQs", "href": "#faq" }
+    ],
+    "cta": { "label": "Explore Magazines", "href": "#magazines" }
+  },
+
+  "hero": {
+    "eyebrow": "Personalized magazines & keepsakes",
+    "headline": "Your memories deserve a cover story.",
+    "scriptAccent": "made for your moment",
+    "copy": "Turn favorite photos, meaningful messages, and unforgettable milestones into a personalized magazine that feels like the person it celebrates.",
+    "primaryCta": { "label": "Explore Magazines", "href": "#magazines" },
+    "secondaryCta": { "label": "See How It Works", "href": "#how-it-works" },
+    "mockupCaption": "Sample cover and spread layout. Your photos and words go here."
+  },
+
+  "intro": {
+    "heading": "More than a gift. A story worth keeping.",
+    "copy": "The inside jokes. The big milestones. The everyday photos you keep coming back to. Bring them together in a keepsake that celebrates your person, your people, or your own next chapter."
+  },
+
+  "directory": {
+    "heading": "Find your kind of keepsake.",
+    "copy": "Explore personalized magazines, photo keepsakes, and thoughtful finishing touches.",
+    "allLabel": "Everything",
+    "detailLinkLabel": "View details",
+    "noResults": "Nothing in this group yet. Try another category."
+  },
+
+  "categories": [
+    { "id": "magazines", "label": "Magazines" },
+    { "id": "photo", "label": "Photo keepsakes" },
+    { "id": "cards", "label": "Cards & books" },
+    { "id": "gifts", "label": "Gifts & bundles" }
+  ],
+
+  "products": [
+    {
+      "id": "custom-magazine",
+      "slug": "custom-magazine",
+      "name": "Custom Magazine",
+      "category": "magazines",
+      "motif": "magazine",
+      "featured": true,
+      "shortDescription": "A personalized magazine concept built around someone's photos, stories, and milestones.",
+      "longDescription": "This is the heart of the collection: a magazine made around one person, one couple, or one group of friends. Picture a cover with their name in the masthead, pages that move through the moments you choose, and words that sound like the people who know them best. It is a keepsake meant to be read, passed around, and saved, whether it becomes a custom birthday magazine, an anniversary magazine, a friendship magazine, or a graduation keepsake.",
+      "intendedUse": "A centerpiece gift for a milestone birthday, anniversary, graduation, or a celebration of someone you love.",
+      "occasions": ["birthdays", "anniversaries", "best-friends", "graduations", "couples", "family", "weddings", "school-team"],
+      "personalization": ["Cover title and masthead name", "Cover photo", "Photos throughout the pages", "Personal messages and letters", "Captions, inside jokes, and favorite quotes"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "magazine-templates",
+      "slug": "magazine-templates",
+      "name": "Magazine Templates",
+      "category": "magazines",
+      "motif": "templates",
+      "featured": true,
+      "shortDescription": "A starting layout for arranging a personal cover story and memorable pages.",
+      "longDescription": "Not sure where to begin? A template gives you a designed starting point: a cover style, page layouts, and places for photos and words. You choose the direction and bring the story, so the finished pages still feel completely personal.",
+      "intendedUse": "For anyone who wants a clear structure to fill with their own photos and words.",
+      "occasions": ["birthdays", "anniversaries", "best-friends", "graduations", "couples", "family"],
+      "personalization": ["Choice of layout style", "Your photos in each frame", "Headlines and captions in your words", "Colors to suit the occasion"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "pocket-magazine",
+      "slug": "pocket-magazine",
+      "name": "Pocket Magazine",
+      "category": "magazines",
+      "motif": "pocket",
+      "featured": true,
+      "shortDescription": "A compact keepsake concept for a collection of favorite moments.",
+      "longDescription": "A smaller format for a shorter story. It suits a handful of favorite photos, a heartfelt note, or a quick look back at a season together. Easy to tuck into a card, a bag, or a gift box.",
+      "intendedUse": "A thoughtful small gift, a party favor idea, or a companion to a larger keepsake.",
+      "occasions": ["birthdays", "best-friends", "couples", "graduations", "weddings"],
+      "personalization": ["Cover title and photo", "A short collection of favorite photos", "A personal note"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "newspaper-magazine",
+      "slug": "newspaper-style-magazine",
+      "name": "Newspaper-Style Magazine",
+      "category": "magazines",
+      "motif": "newspaper",
+      "featured": true,
+      "shortDescription": "A headline-inspired format for milestones, announcements, and personal stories.",
+      "longDescription": "Big headlines, columns of stories, and photos laid out like the front page. This format makes any milestone feel like breaking news, from a graduation announcement to a front-page tribute for someone's big birthday.",
+      "intendedUse": "Announcements, milestone tributes, and celebrations that deserve a headline.",
+      "occasions": ["birthdays", "anniversaries", "graduations", "weddings", "school-team", "family"],
+      "personalization": ["Front-page headline", "Stories and announcements in your words", "Photos with captions", "Dates and names"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "love-sticker-book",
+      "slug": "love-sticker-book",
+      "name": "Love Sticker Book",
+      "category": "cards",
+      "motif": "stickers",
+      "featured": false,
+      "shortDescription": "A playful concept for collecting affectionate notes and shared memories.",
+      "longDescription": "Part keepsake, part activity. Imagine pages waiting to be filled with photo stickers and little notes, put together one memory at a time. It is a sweet way to celebrate a relationship or a friendship and enjoy making it together.",
+      "intendedUse": "A gift for a partner or best friend that you finish together.",
+      "occasions": ["couples", "anniversaries", "best-friends"],
+      "personalization": ["Your photos as stickers", "Short notes and messages", "Cover title"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "photo-cards",
+      "slug": "photo-cards",
+      "name": "Photo Cards",
+      "category": "cards",
+      "motif": "photocard",
+      "featured": false,
+      "shortDescription": "A simple way to pair a favorite image with a meaningful message.",
+      "longDescription": "One photo and the words that go with it. A photo card can travel with a larger gift or stand on its own as a note someone keeps on the fridge, the desk, or the mirror.",
+      "intendedUse": "A message to go with a gift, or a small keepsake on its own.",
+      "occasions": ["birthdays", "anniversaries", "best-friends", "graduations", "couples", "family", "weddings"],
+      "personalization": ["A favorite photo", "A personal message", "Name and date"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "instant-style-prints",
+      "slug": "instant-style-photo-prints",
+      "name": "Instant-Style Photo Prints",
+      "category": "photo",
+      "motif": "instant",
+      "featured": false,
+      "shortDescription": "A nostalgic photo-print concept for memorable snapshots.",
+      "longDescription": "The familiar look of an instant snapshot, with a white border and room for a short caption. They are made for pinning up, tucking into a magazine, or handing out as little reminders of a great day.",
+      "intendedUse": "Decor, scrapbooks, gift add-ins, and party keepsakes.",
+      "occasions": ["birthdays", "best-friends", "couples", "graduations", "weddings", "school-team"],
+      "personalization": ["Your snapshots", "Short handwritten-style captions"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "single-duo-cards",
+      "slug": "single-and-duo-cards",
+      "name": "Single & Duo Cards",
+      "category": "cards",
+      "motif": "duo",
+      "featured": false,
+      "shortDescription": "Personal keepsake cards for a message, a memory, or a pair of favorite photos.",
+      "longDescription": "Choose one photo for a single moment or two side by side for a then-and-now, a you-and-me, or a before-and-after. Add a line or two that says exactly what you mean.",
+      "intendedUse": "Then-and-now comparisons, couple and friendship cards, or a personal note.",
+      "occasions": ["anniversaries", "best-friends", "couples", "family", "graduations"],
+      "personalization": ["One or two photos", "A short message", "Names and dates"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "classic-print-packs",
+      "slug": "classic-photo-print-packs",
+      "name": "Classic Photo Print Packs",
+      "category": "photo",
+      "motif": "prints",
+      "featured": false,
+      "shortDescription": "A coordinated collection of photographs worth revisiting.",
+      "longDescription": "A set of your chosen photos, printed to be held, shared, and revisited. A print pack pairs well with a magazine or works as a simple gift for someone who would love to see the photos off the screen.",
+      "intendedUse": "Sharing a set of favorite photos or completing a larger gift.",
+      "occasions": ["family", "weddings", "graduations", "best-friends", "school-team"],
+      "personalization": ["Your selection of photos"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "photo-strips",
+      "slug": "photo-strips",
+      "name": "Photo Strips",
+      "category": "photo",
+      "motif": "strip",
+      "featured": false,
+      "shortDescription": "A sequence of moments presented in a photo-booth-inspired layout.",
+      "longDescription": "A short run of photos stacked in a narrow strip, like the ones from a photo booth. It tells a tiny story in a few frames and makes a sweet bookmark, favor, or add-in.",
+      "intendedUse": "Favors, bookmarks, and small add-ins for a bigger gift.",
+      "occasions": ["best-friends", "couples", "weddings", "birthdays", "school-team"],
+      "personalization": ["A short sequence of photos", "A name, date, or short line"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "add-ons-gifts",
+      "slug": "add-ons-and-gifts",
+      "name": "Add-ons & Gifts",
+      "category": "gifts",
+      "motif": "giftbox",
+      "featured": false,
+      "shortDescription": "Thoughtful finishing touches to complement a keepsake.",
+      "longDescription": "Small details that help the whole gift feel considered, such as a personal note or a coordinated finishing touch. The available extras will be listed here as the collection comes together.",
+      "intendedUse": "Completing a magazine or photo keepsake gift.",
+      "occasions": ["birthdays", "anniversaries", "best-friends", "graduations", "couples", "family", "weddings"],
+      "personalization": ["A personal note"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "curated-bundles",
+      "slug": "curated-bundles",
+      "name": "Curated Bundles",
+      "category": "gifts",
+      "motif": "bundle",
+      "featured": false,
+      "shortDescription": "Coordinated keepsake combinations for a meaningful gift.",
+      "longDescription": "A magazine with matching photo keepsakes, gathered so the whole gift tells one story. Bundles make it easy to give something complete without choosing every piece separately.",
+      "intendedUse": "A complete gift for a milestone, chosen as one coordinated set.",
+      "occasions": ["birthdays", "anniversaries", "best-friends", "graduations", "couples", "weddings"],
+      "personalization": ["Everything you would personalize in each included piece"],
+      "image": null,
+      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    }
+  ],
+
+  "productPage": {
+    "backLabel": "Back to all keepsakes",
+    "personalizeHeading": "What you can personalize",
+    "useHeading": "A good fit for",
+    "occasionsHeading": "Occasions",
+    "detailsHeading": "Details",
+    "detailsPending": "Format, size, and pricing details will be shared here as this collection opens. Have a question in the meantime? We would love to hear what you are planning.",
+    "inquiryCta": "Ask about this keepsake",
+    "specLabels": {
+      "format": "Format",
+      "dimensions": "Size",
+      "pageCount": "Pages",
+      "materials": "Materials",
+      "price": "Price",
+      "turnaround": "Production time",
+      "fulfillment": "Delivery"
+    }
+  },
+
+  "journey": {
+    "heading": "Make it unmistakably theirs.",
+    "copy": "A birthday cover story. A collection of friendship memories. A celebration of everything you have built together. Start with the occasion, then bring your photos, words, and personality into the pages.",
+    "note": "These are example layouts to spark ideas. Your final pages depend on the format you choose.",
+    "pages": [
+      { "id": "front-cover", "label": "Front cover", "motif": "cover", "description": "Set the tone with a title, a favorite photo, and the name of the person you are celebrating." },
+      { "id": "opening-page", "label": "Opening page", "motif": "opening", "description": "Begin with a dedication, a letter, or a few words about why this story matters." },
+      { "id": "interior-spread", "label": "Interior spread", "motif": "spread", "description": "Let photos and captions carry the story across two facing pages." },
+      { "id": "closing-page", "label": "Closing page", "motif": "closing", "description": "End with a meaningful message, a favorite memory, or a note from the people who love them." },
+      { "id": "back-cover", "label": "Back cover", "motif": "back", "description": "Finish with one more photo, a short line, or a simple signature detail." }
+    ],
+    "viewerPrev": "Previous page",
+    "viewerNext": "Next page",
+    "viewerClose": "Close"
+  },
+
+  "howItWorks": {
+    "heading": "From favorite photos to a personal story.",
+    "steps": [
+      { "title": "Choose your direction.", "copy": "Explore the magazine styles and decide what you want to celebrate." },
+      { "title": "Gather your story.", "copy": "Collect the photos, messages, names, and details you would like to include." },
+      { "title": "Make it personal.", "copy": "Bring your chosen format together with the people and moments that matter." }
+    ]
+  },
+
+  "occasions": {
+    "heading": "Every chapter has a reason to celebrate.",
+    "copy": "Start with the occasion. Make the story your own.",
+    "showIdeasLabel": "Show keepsakes for this occasion",
+    "items": [
+      { "id": "birthdays", "label": "Birthdays", "idea": "Put the birthday person on the cover and fill the pages with their year, their people, and the stories everyone tells about them." },
+      { "id": "anniversaries", "label": "Anniversaries", "idea": "Tell the story of the two of you, from the first photo together to the chapter you are in now." },
+      { "id": "best-friends", "label": "Best Friends", "idea": "Collect the trips, the group chats, and the inside jokes nobody else would understand." },
+      { "id": "graduations", "label": "Graduations", "idea": "Celebrate the hard work, the late nights, and the people who cheered them across the stage." },
+      { "id": "couples", "label": "Couples", "idea": "A love story in pages: date nights, favorite places, and the little things that make you, you." },
+      { "id": "family", "label": "Family Memories", "idea": "Gather generations of photos and stories into one keepsake the whole family can pass around." },
+      { "id": "weddings", "label": "Weddings & Wedding Parties", "idea": "A keepsake for the couple, or a thank-you for the friends who stood beside them." },
+      { "id": "school-team", "label": "School & Team Milestones", "idea": "Mark a season, a championship, or a graduating class with photos and words from the group." }
+    ]
+  },
+
+  "publisher": {
+    "heading": "Personal stories, thoughtfully presented.",
+    "copy": "Lyfe Moment Co. celebrates the details that make a moment yours. This publishing collection brings that same spirit to personalized magazines and keepsakes, with space for your photos, your words, and your point of view.",
+    "credit": "A publishing collection by Bread of Lyfe Publishing.",
+    "logo": {
+      "src": "assets/brand/bread-of-lyfe-publishing-logo.webp",
+      "fallbackSrc": "assets/brand/bread-of-lyfe-publishing-logo.png",
+      "width": 447,
+      "height": 447,
+      "alt": "Bread of Lyfe Publishing"
+    }
+  },
+
+  "schools": {
+    "heading": "A meaningful way to celebrate your people.",
+    "copy": "Have a school milestone, team celebration, or business story in mind? Tell us what you are creating, who it is for, and when you need it.",
+    "cta": { "label": "Discuss a Publishing Project", "href": "#inquiry" }
+  },
+
+  "inquiryForm": {
+    "id": "inquiry",
+    "heading": "Tell us about your project.",
+    "copy": "Share what you are creating and we will reply by email. There is no cost or commitment to ask.",
+    "connected": false,
+    "_connectedHelp": "Set to true ONLY after the server endpoint is connected to storage and a test submission has been confirmed. While false, the form shows a preview notice and sends nothing.",
+    "endpoint": "/api/magazine-inquiry",
+    "previewNotice": "Preview only: this form is not connected yet, so nothing you enter is sent or saved. To reach us now, email",
+    "labels": {
+      "name": "Your name",
+      "email": "Email address",
+      "interest": "What are you interested in?",
+      "interestNotSure": "Not sure yet",
+      "occasion": "Occasion",
+      "occasionOther": "Something else",
+      "quantity": "How many would you like? (optional)",
+      "quantityHint": "Helpful for schools, teams, and group gifts.",
+      "eventDate": "Date you are celebrating (optional)",
+      "eventDateHint": "This helps us plan. It is a requested date, not a delivery guarantee.",
+      "notes": "Tell us about your project",
+      "notesHint": "Who is it for and what would you like to include? Please do not share payment details, health information, or children's personal details here.",
+      "privacy": "I have read the <a href=\"policies/#privacy\">privacy notice</a> and agree that Lyfe Moment Co. may use these details to reply to my inquiry.",
+      "marketing": "Optional: send me occasional emails about new keepsakes. You can unsubscribe at any time.",
+      "submit": "Send inquiry",
+      "sending": "Sending..."
+    },
+    "messages": {
+      "success": "Thank you. Your inquiry has been received. Your reference is",
+      "previewSuccess": "Your answers look complete. Because this page is a preview, nothing was sent or saved. Please email us to start a conversation.",
+      "error": "Sorry, your inquiry could not be sent right now and nothing was saved. Please try again in a few minutes or email",
+      "notConfigured": "This form is not connected yet, so nothing was saved. Please email",
+      "rateLimited": "Too many attempts from this connection. Please wait a little and try again, or email",
+      "fixErrors": "Please check the highlighted fields."
+    }
+  },
+
+  "faq": {
+    "heading": "Questions, answered.",
+    "items": [
+      {
+        "question": "What can I personalize?",
+        "answer": "Photos, names, messages, and the details that make the story yours, such as captions, favorite quotes, and inside jokes. Each keepsake page lists what can be personalized for that format.",
+        "published": true
+      },
+      {
+        "question": "What photos and text should I prepare?",
+        "answer": "Start by gathering your favorite photos of the person or group, with the clearest, best-lit versions you have. Write down names exactly as they should appear, along with any messages, dates, or memories you want to include. It helps to choose a few favorites to lead with, like a cover photo.",
+        "published": true
+      },
+      {
+        "question": "Can I create a magazine as a gift?",
+        "answer": "Yes. These keepsakes are designed with gifting in mind, whether it is for a birthday, an anniversary, a graduation, or simply someone you want to celebrate.",
+        "published": true
+      },
+      {
+        "question": "Are design assistance and printing included?",
+        "answer": "",
+        "published": false,
+        "_ownerNote": "Needs owner answer: what design help and printing are included per format."
+      },
+      {
+        "question": "Will I review a proof?",
+        "answer": "",
+        "published": false,
+        "_ownerNote": "Needs owner answer: proof process and how many revisions apply to magazines."
+      },
+      {
+        "question": "What sizes and page counts are available?",
+        "answer": "",
+        "published": false,
+        "_ownerNote": "Needs owner answer after confirming formats with the printer."
+      },
+      {
+        "question": "What does it cost?",
+        "answer": "",
+        "published": false,
+        "_ownerNote": "Needs approved prices."
+      },
+      {
+        "question": "How long does production take?",
+        "answer": "",
+        "published": false,
+        "_ownerNote": "Needs confirmed proof, production, and shipping times."
+      }
+    ]
+  },
+
+  "finalCta": {
+    "heading": "Give the moment its own story.",
+    "copy": "Explore a personalized keepsake for the people and milestones you want to remember.",
+    "primaryCta": { "label": "Explore Magazines", "href": "#magazines" },
+    "secondaryCta": { "label": "Ask a Publishing Question", "href": "#inquiry" }
+  },
+
+  "footer": {
+    "publisherLine": "Publishing collection by Bread of Lyfe Publishing.",
+    "links": [
+      { "label": "Lyfe Moment Co. home", "href": "/" },
+      { "label": "Privacy notice", "href": "policies/#privacy" },
+      { "label": "Ordering, shipping & returns", "href": "policies/#ordering" }
+    ]
+  },
+
+  "policies": {
+    "title": "Privacy & Ordering Information | Lyfe Moment Co.",
+    "heading": "Privacy and ordering information",
+    "_ownerNote": "DRAFT. Owner and, ideally, legal review required before launch.",
+    "sections": [
+      {
+        "id": "privacy",
+        "heading": "Privacy notice for magazine inquiries",
+        "paragraphs": [
+          "When you send an inquiry from the magazine page, we receive the details you enter: your name, email address, the keepsake and occasion you are interested in, an optional quantity and date, your project notes, and whether you asked to receive marketing emails.",
+          "We use these details to reply to your inquiry and to plan your project with you. We do not sell your information. If you opt in to marketing emails, we may also send occasional updates, and you can unsubscribe at any time.",
+          "Please do not include payment details, health information, or children's personal details in an inquiry. We do not accept photo uploads through this form.",
+          "To ask about, correct, or delete the information you sent, email hello@lyfemoment.store."
+        ]
+      },
+      {
+        "id": "ordering",
+        "heading": "Ordering, shipping, and returns",
+        "paragraphs": [
+          "Personalized magazines and keepsakes are not yet available to order online. Formats, prices, production times, shipping, and return or revision terms will be published here and on each product page before ordering opens.",
+          "Questions in the meantime? Email breadoflyfepublishing@gmail.com."
+        ]
+      }
+    ]
+  }
+}
