@@ -42,10 +42,11 @@ What was verified on 27 Oct 2026:
 - **GitHub:** `bookmrschi-hue/lyfemomentco-site`, branch `main`, one commit ("Create form"). The
   site is a single 25 MB `index.html` (images embedded inside it), an order page `form`, and an
   Express server (`server.js`) with Square and Stripe payment endpoints.
-- **Netlify:** not verified. There was no Netlify configuration in the repository, no Netlify
-  connector in this session, and the live domain could not be reached from the build sandbox.
-  Netlify can serve the static files but does **not** run `server.js`, so if the live site is on
-  Netlify, the Square/Stripe endpoints in `server.js` are not running there today.
+- **Netlify:** confirmed. The Netlify project `lyfemomentco` builds this repository and posted a
+  deploy preview for this PR (https://deploy-preview-1--lyfemomentco.netlify.app/magazine/), with
+  the redirect and header rules from `netlify.toml` processed successfully. Netlify serves the
+  static files but does **not** run `server.js`, so the Square/Stripe endpoints in `server.js` are
+  not running on the live site today.
 - **Webflow:** one site, "Lyfe Moment Co." (`lyfe-moment-co`), created 26 Oct 2026, never
   published, no custom domain. It is not serving lyfemoment.store.
 

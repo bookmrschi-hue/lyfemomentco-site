@@ -1,7 +1,8 @@
 # QA report (27 Oct 2026, staging build)
 
-Tested on the local Express server (`npm start`) in a cloud sandbox. Not yet tested on a Netlify
-deploy preview or a real phone.
+Tested on the local Express server (`npm start`) in a cloud sandbox. The Netlify deploy preview
+built successfully (redirect and header rules passed), but it could not be opened from the sandbox,
+so browser checks on the preview itself and on a real phone are still to do.
 
 ## Results
 
@@ -48,6 +49,6 @@ compress files; Netlify does, which should improve mobile timings further.
 
 - **Safari / WebKit:** the WebKit engine is not installed in this environment. Test on an iPhone
   once a deploy preview exists.
-- **Netlify deploy preview and the Netlify Function:** no Netlify access in this session.
+- **Netlify deploy preview pages and the Netlify Function:** the preview built, but it is not reachable from this sandbox, so open it on your phone to check.
 - **Real form storage:** no Google Sheet connected yet, so the live form remains in preview mode.
 - **Webflow mobile editor crash:** not reproducible here; see WEBFLOW-HANDOFF.md.
