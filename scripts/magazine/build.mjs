@@ -634,7 +634,7 @@ function offers(p, P) {
   const card = (o) => {
     const price = typeof o.price === 'number' && o.price > 0
       ? new Intl.NumberFormat('en-US', { style: 'currency', currency: p.specs?.currency || 'USD' }).format(o.price) : '';
-    const buy = price && /^https:\/\/buy\.stripe\.com\//.test(o.checkoutUrl || '')
+    const buy = price && /^https:\/\/(buy\.stripe\.com|square\.link|checkout\.square\.site)\//.test(o.checkoutUrl || '')
       ? `<a class="btn btn--primary" href="${esc(o.checkoutUrl)}" rel="noopener">Buy ${esc(o.label)}${price ? ` · ${price}` : ''}</a>`
       : `<p class="offer__soon">${esc(P.comingSoon)}</p>`;
     return `<li class="offer">${sparkle}<h3>${esc(o.label)}</h3><p>${esc(o.summary)}</p><ol class="offer__steps">${o.steps.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>${buy}</li>`;
