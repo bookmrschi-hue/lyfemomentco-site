@@ -62,6 +62,20 @@ function validate(c) {
 const visibleProducts = content.products.filter((p) => p.publicationStatus !== 'hidden');
 const occasionLabel = Object.fromEntries(content.occasions.items.map((o) => [o.id, o.label]));
 const categoryLabel = Object.fromEntries(content.categories.map((c) => [c.id, c.label]));
+const visibleCategories = content.categories.filter((c) => !c.hidden && visibleProducts.some((p) => p.category === c.id));
+const show = (key) => content.landingSections?.[key] !== false;
+
+// Background and section photos. A missing file falls back to a soft gradient panel,
+// so the page still renders before the owner adds the images.
+function photo(key, base, { eager = false, cls = '', sizes = '100vw' } = {}) {
+  const ph = content.photos?.[key];
+  if (!ph) return '';
+  if (existsSync(join(MAG, ph.src))) {
+    return `<img class="${cls}" src="${esc(base + ph.src)}" width="${ph.width}" height="${ph.height}" alt="${esc(ph.alt)}" sizes="${esc(sizes)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+  }
+  return `<div class="${cls} photo-fallback photo-fallback--${esc(key)}" role="img" aria-label="${esc(ph.alt)}"></div>`;
+}
+const sparkle = '<span class="rhinestones" aria-hidden="true"></span>';
 
 function robotsMeta(indexable) {
   return indexable ? '<meta name="robots" content="index, follow">' : '<meta name="robots" content="noindex, nofollow">';
@@ -181,27 +195,75 @@ function productImage(p, base, { eager = false } = {}) {
   return productArt(p.motif, `Illustrated placeholder for ${p.name}`);
 }
 
+// A product card styled as a magazine cover: photo, masthead and the issue name as a cover line.
+function issueCover(p, base) {
+  if (p.image) return productImage(p, base);
+  if (!p.coverPhoto) return productImage(p, base);
+  return `<div class="issue-cover">
+    ${photo(p.coverPhoto, base, { cls: 'issue-cover__photo', sizes: '(min-width: 1024px) 360px, (min-width: 640px) 45vw, 92vw' })}
+    <span class="issue-cover__masthead" aria-hidden="true">Lyfe Moment</span>
+    <span class="issue-cover__line" aria-hidden="true">${esc(p.name)}</span>
+    <span class="issue-cover__tag">Sample cover</span>
+  </div>`;
+}
+
 // ---------- landing page sections ----------
 
 function hero() {
   const h = content.hero;
-  return `<section class="hero" id="top" aria-labelledby="hero-title">
-  <div class="wrap hero__grid">
-    <div class="hero__text">
-      <p class="eyebrow">${esc(h.eyebrow)}</p>
+  const lines = (h.coverLines || []).map((l) => `<li>${esc(l)}</li>`).join('');
+  return `<section class="hero hero--photo" id="top" aria-labelledby="hero-title">
+  ${photo('hero', '', { eager: true, cls: 'hero__photo' })}
+  <div class="hero__veil" aria-hidden="true"></div>
+  <div class="wrap hero__cover">
+    <p class="hero__issue">${esc(h.eyebrow)}</p>
+    <p class="masthead" aria-hidden="true">${esc(h.masthead)}</p>
+    <div class="hero__panel">
+      ${sparkle}
       <h1 id="hero-title">${esc(h.headline)}</h1>
       <p class="hero__script" aria-hidden="true">${esc(h.scriptAccent)}</p>
       <p class="lede">${esc(h.copy)}</p>
       <div class="actions">
         <a class="btn btn--primary" href="${esc(h.primaryCta.href)}">${esc(h.primaryCta.label)}</a>
-        <a class="btn btn--secondary" href="${esc(h.secondaryCta.href)}">${esc(h.secondaryCta.label)}</a>
+        <a class="btn btn--glass" href="${esc(h.secondaryCta.href)}">${esc(h.secondaryCta.label)}</a>
       </div>
-      <p class="hero__credit">${esc(content.publisher.credit)}</p>
     </div>
-    <figure class="hero__art">
-      ${heroArt('Sample personalized magazine: a cover titled Cover Story with an empty photo frame, in front of an open page spread.')}
-      <figcaption>${esc(h.mockupCaption)}</figcaption>
-    </figure>
+    ${lines ? `<ul class="cover-lines" aria-label="In this issue">${lines}</ul>` : ''}
+  </div>
+</section>`;
+}
+
+function ways() {
+  const w = content.ways;
+  if (!w) return '';
+  const items = w.items.map((it) => `<li class="way"><h3>${esc(it.title)}</h3><p>${esc(it.copy)}</p></li>`).join('');
+  return `<section class="ways" aria-labelledby="ways-title">
+  <div class="wrap ways__grid">
+    <div class="ways__photo">${photo('hands', '', { cls: 'cover-photo', sizes: '(min-width: 900px) 45vw, 92vw' })}</div>
+    <div class="ways__text">
+      <h2 id="ways-title">${esc(w.heading)}</h2>
+      <ul class="ways__list">${items}</ul>
+    </div>
+  </div>
+</section>`;
+}
+
+function feature() {
+  const f = content.feature;
+  if (!f) return '';
+  return `<section class="feature" id="yearbook" aria-labelledby="feature-title">
+  ${photo('editorial', '', { cls: 'feature__photo', sizes: '100vw' })}
+  <div class="feature__veil" aria-hidden="true"></div>
+  <div class="wrap feature__inner">
+    <div class="feature__panel">
+      ${sparkle}
+      <p class="eyebrow">${esc(f.eyebrow)}</p>
+      <h2 id="feature-title">${esc(f.heading)}</h2>
+      <p class="feature__script" aria-hidden="true">${esc(f.script)}</p>
+      <p>${esc(f.copy)}</p>
+      <p class="feature__note">${esc(f.note)}</p>
+      <a class="btn btn--primary" href="${esc(f.cta.href)}">${esc(f.cta.label)}</a>
+    </div>
   </div>
 </section>`;
 }
@@ -222,15 +284,15 @@ function intro() {
 
 function directory() {
   const d = content.directory;
-  const filters = [{ id: 'all', label: d.allLabel }, ...content.categories]
+  const filters = [{ id: 'all', label: d.allLabel }, ...visibleCategories]
     .map((c, i) => `<li><button type="button" class="chip" data-filter-category="${esc(c.id)}" aria-pressed="${i === 0}">${esc(c.label)}</button></li>`)
     .join('');
   const cards = visibleProducts
     .map((p) => `<li class="product-card" data-category="${esc(p.category)}" data-occasions="${esc((p.occasions || []).join(' '))}" data-product="${esc(p.slug)}">
         <a class="product-card__link" href="products/${esc(p.slug)}/">
-          <div class="product-card__art">${productImage(p, '')}</div>
+          <div class="product-card__art">${issueCover(p, '')}</div>
           <div class="product-card__body">
-            <p class="product-card__category">${esc(categoryLabel[p.category])}</p>
+            <p class="product-card__category">${esc((p.formats || [categoryLabel[p.category]]).join(' or '))}</p>
             <h3 class="product-card__title">${esc(p.name)}</h3>
             <p class="product-card__desc">${esc(p.shortDescription)}</p>
             <span class="product-card__more">${esc(d.detailLinkLabel)}<span class="visually-hidden">: ${esc(p.name)}</span> <span aria-hidden="true">&rarr;</span></span>
@@ -239,20 +301,19 @@ function directory() {
       </li>`)
     .join('\n      ');
   return `<section class="directory band-blue" id="magazines" aria-labelledby="directory-title">
-  <div class="stripe-band stripe-band--blue" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head">
       <h2 id="directory-title">${esc(d.heading)}</h2>
       <p>${esc(d.copy)}</p>
     </div>
-    <div class="filters" data-filters hidden>
+    ${visibleCategories.length > 1 ? `<div class="filters" data-filters hidden>
       <p class="visually-hidden" id="filter-label">Filter keepsakes by category</p>
       <ul class="chips" aria-labelledby="filter-label">${filters}</ul>
       <p class="filter-occasion" data-occasion-active hidden>
         <span data-occasion-text></span>
         <button type="button" class="link-button" data-clear-occasion>Show all occasions</button>
       </p>
-    </div>
+    </div>` : ''}
     <p class="visually-hidden" role="status" aria-live="polite" data-filter-status></p>
     <ul class="product-grid" data-product-grid>
       ${cards}
@@ -375,14 +436,17 @@ function inquiry() {
   const booking = S.booking?.verified && S.booking?.calendlyUrl
     ? `<p class="booking">Prefer to talk it through? <a href="${esc(S.booking.calendlyUrl)}" rel="noopener">Book a call</a>.</p>`
     : '';
-  return `<section class="schools band-blue" id="schools" aria-labelledby="schools-title">
-  <div class="wrap schools__grid">
-    <div class="schools__intro">
+  const intro = show('schools')
+    ? `<div class="schools__intro">
       <h2 id="schools-title">${esc(s.heading)}</h2>
       <p>${esc(s.copy)}</p>
       <a class="btn btn--light" href="${esc(s.cta.href)}" data-focus-form>${esc(s.cta.label)}</a>
       ${booking}
-    </div>
+    </div>`
+    : '';
+  return `<section class="schools band-blue${intro ? '' : ' schools--form-only'}" id="schools" aria-label="${esc(f.heading)}">
+  <div class="wrap schools__grid">
+    ${intro}
     <div class="form-panel" id="${esc(f.id)}" tabindex="-1">
       <h2 class="form-panel__title">${esc(f.heading)}</h2>
       <p>${esc(f.copy)}</p>
@@ -543,11 +607,12 @@ ${brandStrip()}
 ${header('', { onLanding: true })}
 <main id="main">
 ${hero()}
-${intro()}
+${ways()}
 ${directory()}
-${journey()}
+${feature()}
+${show('journey') ? journey() : ''}
 ${howItWorks()}
-${occasions()}
+${show('occasions') ? occasions() : ''}
 ${publisher()}
 ${inquiry()}
 ${faq()}
@@ -561,6 +626,21 @@ ${footer('')}
 }
 
 // ---------- product detail pages ----------
+
+// DIY Template and Made for You side by side. A buy button appears only when a real
+// Stripe Payment Link is filled in (checkoutUrl) and a price is set.
+function offers(p, P) {
+  if (!p.offers) return '';
+  const card = (o) => {
+    const price = typeof o.price === 'number' && o.price > 0
+      ? new Intl.NumberFormat('en-US', { style: 'currency', currency: p.specs?.currency || 'USD' }).format(o.price) : '';
+    const buy = price && /^https:\/\/buy\.stripe\.com\//.test(o.checkoutUrl || '')
+      ? `<a class="btn btn--primary" href="${esc(o.checkoutUrl)}" rel="noopener">Buy ${esc(o.label)}${price ? ` · ${price}` : ''}</a>`
+      : `<p class="offer__soon">${esc(P.comingSoon)}</p>`;
+    return `<li class="offer">${sparkle}<h3>${esc(o.label)}</h3><p>${esc(o.summary)}</p><ol class="offer__steps">${o.steps.map((x) => `<li>${esc(x)}</li>`).join('')}</ol>${buy}</li>`;
+  };
+  return `<h2>${esc(P.offersHeading)}</h2><ul class="offers">${card(p.offers.diy)}${card(p.offers.made)}</ul>`;
+}
 
 function productPage(p) {
   const base = '../../';
@@ -597,16 +677,17 @@ ${brandStrip()}
 ${header(base, { onLanding: false })}
 <main id="main" class="product">
   <div class="wrap">
-    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="${esc(S.homePath)}">Home</a></li><li><a href="${base}#magazines">Magazines &amp; keepsakes</a></li><li aria-current="page">${esc(p.name)}</li></ol></nav>
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="${esc(S.homePath)}">Home</a></li><li><a href="${base}#magazines">The Issues</a></li><li aria-current="page">${esc(p.name)}</li></ol></nav>
     <div class="product__grid">
-      <div class="product__art">${productImage(p, base, { eager: true })}</div>
+      <div class="product__art">${issueCover(p, base)}</div>
       <div class="product__panel">
-        <p class="eyebrow">${esc(categoryLabel[p.category])}</p>
+        <p class="eyebrow">${esc(p.formats ? `${P.formatsLabel || 'Comes as'}: ${p.formats.join(' or ')}` : categoryLabel[p.category])}</p>
         <h1>${esc(p.name)}</h1>
         <p class="lede">${esc(p.shortDescription)}</p>
         <p>${esc(p.longDescription)}</p>
+        ${offers(p, P)}
         <h2>${esc(P.useHeading)}</h2>
-        <p>${esc(p.intendedUse)}</p>
+        ${p.perfectFor ? `<ul class="ticks">${p.perfectFor.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : `<p>${esc(p.intendedUse)}</p>`}
         <h2>${esc(P.personalizeHeading)}</h2>
         <ul class="ticks">${pers}</ul>
         <h2>${esc(P.occasionsHeading)}</h2>

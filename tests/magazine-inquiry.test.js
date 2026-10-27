@@ -10,7 +10,7 @@ const NOW = new Date('2026-10-27T12:00:00Z');
 const good = (over = {}) => ({
   name: 'Test Person',
   email: 'test@example.com',
-  interest: 'custom-magazine',
+  interest: 'the-birthday-issue',
   occasion: 'birthdays',
   quantity: '',
   eventDate: '2026-12-01',

@@ -1,6 +1,5 @@
 {
   "_readme": "Edit the words, products, FAQs and contact details for the magazine page here, then run `npm run build:magazine` (or push to GitHub and the build workflow regenerates the page). See docs/magazine/EDITING.md.",
-
   "site": {
     "shopName": "Lyfe Moment Co.",
     "publisherName": "Bread of Lyfe Publishing",
@@ -11,7 +10,11 @@
     "emailGeneral": "hello@lyfemoment.store",
     "emailPublishing": "breadoflyfepublishing@gmail.com",
     "socialHandle": "@LyfeMomentCo",
-    "basedIn": { "city": "Corona", "region": "CA", "country": "US" },
+    "basedIn": {
+      "city": "Corona",
+      "region": "CA",
+      "country": "US"
+    },
     "indexing": "staging",
     "_indexingHelp": "Leave as \"staging\" until launch. \"staging\" adds noindex to every magazine page and keeps it out of sitemap.xml. Change to \"production\" only when the page is approved and live at lyfemoment.store/magazine/.",
     "analytics": {
@@ -26,59 +29,535 @@
       "_help": "A booking button appears only when a URL is filled in AND verified is true. Until then visitors use the publishing inquiry form."
     }
   },
-
   "seo": {
-    "title": "Personalized Magazines & Keepsakes | Lyfe Moment Co.",
-    "description": "Celebrate birthdays, anniversaries, graduations, and everyday memories with personalized magazine and keepsake ideas from Lyfe Moment Co.",
+    "title": "Personalized Magazines & Newspapers | Lyfe Moment Co.",
+    "description": "Personalized magazines and newspapers designed like a fashion editorial: the 2026 Yearbook, birthday, love, best friends, wedding and baby’s first year issues. DIY templates or made for you.",
     "ogImage": "assets/social/og-magazine.jpg",
     "ogImageWidth": 1200,
     "ogImageHeight": 630,
     "ogImageAlt": "Lyfe Moment Co. personalized magazines: a sample cover on butter yellow with powder blue cabana stripes."
   },
-
-  "brandStrip": { "text": "Honor Your Lyfe Moment." },
-
+  "brandStrip": {
+    "text": "Honor Your Lyfe Moment."
+  },
   "nav": {
     "links": [
-      { "label": "Magazines", "href": "#magazines" },
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Explore Occasions", "href": "#occasions" },
-      { "label": "FAQs", "href": "#faq" }
+      {
+        "label": "The Issues",
+        "href": "#magazines"
+      },
+      {
+        "label": "2026 Yearbook",
+        "href": "#yearbook"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "FAQs",
+        "href": "#faq"
+      }
     ],
-    "cta": { "label": "Explore Magazines", "href": "#magazines" }
+    "cta": {
+      "label": "Shop the Issues",
+      "href": "#magazines"
+    }
   },
-
   "hero": {
-    "eyebrow": "Personalized magazines & keepsakes",
-    "headline": "Your memories deserve a cover story.",
+    "eyebrow": "The Holiday Issue · 2026",
+    "masthead": "Lyfe Moment",
+    "headline": "Your memories, a cover story.",
     "scriptAccent": "made for your moment",
-    "copy": "Turn favorite photos, meaningful messages, and unforgettable milestones into a personalized magazine that feels like the person it celebrates.",
-    "primaryCta": { "label": "Explore Magazines", "href": "#magazines" },
-    "secondaryCta": { "label": "See How It Works", "href": "#how-it-works" },
-    "mockupCaption": "Sample cover and spread layout. Your photos and words go here."
+    "copy": "Personalized magazines and newspapers, designed like a fashion editorial and made from your favorite moments.",
+    "coverLines": [
+      "The 2026 Yearbook",
+      "The Birthday Issue",
+      "DIY or Made for You"
+    ],
+    "primaryCta": {
+      "label": "Shop the Issues",
+      "href": "#magazines"
+    },
+    "secondaryCta": {
+      "label": "How It Works",
+      "href": "#how-it-works"
+    },
+    "mockupCaption": ""
   },
-
   "intro": {
     "heading": "More than a gift. A story worth keeping.",
     "copy": "The inside jokes. The big milestones. The everyday photos you keep coming back to. Bring them together in a keepsake that celebrates your person, your people, or your own next chapter."
   },
-
   "directory": {
-    "heading": "Find your kind of keepsake.",
-    "copy": "Explore personalized magazines, photo keepsakes, and thoughtful finishing touches.",
+    "heading": "The Issues.",
+    "copy": "Every issue comes as a magazine or a newspaper, as a DIY Template or Made for You.",
     "allLabel": "Everything",
-    "detailLinkLabel": "View details",
+    "detailLinkLabel": "View the issue",
     "noResults": "Nothing in this group yet. Try another category."
   },
-
   "categories": [
-    { "id": "magazines", "label": "Magazines" },
-    { "id": "photo", "label": "Photo keepsakes" },
-    { "id": "cards", "label": "Cards & books" },
-    { "id": "gifts", "label": "Gifts & bundles" }
+    {
+      "id": "magazines",
+      "label": "Magazines & newspapers"
+    },
+    {
+      "id": "photo",
+      "label": "Photo keepsakes",
+      "hidden": true
+    },
+    {
+      "id": "cards",
+      "label": "Cards & books",
+      "hidden": true
+    },
+    {
+      "id": "gifts",
+      "label": "Gifts & bundles",
+      "hidden": true
+    }
   ],
-
   "products": [
+    {
+      "id": "yearbook-2026",
+      "slug": "the-2026-yearbook",
+      "name": "The 2026 Yearbook",
+      "category": "magazines",
+      "motif": "magazine",
+      "featured": true,
+      "shortDescription": "Your year, personalized like a yearbook made only for you.",
+      "longDescription": "A personalized yearbook for 2026. Like a school yearbook, but every page is about your people: your family, your friends or just you. The trips, wins, hard seasons and ordinary days of the year, gathered into one issue to close the year and welcome the next.",
+      "intendedUse": "Christmas and holiday gifts. New Year's Eve and New Year traditions. Family year-end recaps. Couples and friend groups looking back together. Personal reflection and goal setting.",
+      "occasions": [
+        "year-in-review",
+        "family"
+      ],
+      "personalization": [
+        "A 2026 cover with your name or family name",
+        "A month-by-month look back",
+        "'Superlatives' for the people in your year",
+        "Top moments, favorite places and best photos",
+        "Lessons and wins from the year",
+        "A page for goals and wishes for 2027"
+      ],
+      "perfectFor": [
+        "Christmas and holiday gifts",
+        "New Year's Eve and New Year traditions",
+        "Family year-end recaps",
+        "Couples and friend groups looking back together",
+        "Personal reflection and goal setting"
+      ],
+      "formats": [
+        "Magazine",
+        "Newspaper"
+      ],
+      "coverPhoto": "editorial",
+      "offers": {
+        "diy": {
+          "label": "DIY Template",
+          "summary": "An editable template you fill in with your own photos and words. Every page is already designed.",
+          "steps": [
+            "Choose your edition and check out.",
+            "Open your editable template from the link you receive.",
+            "Add your photos, names and words. Every page is laid out for you.",
+            "Download your finished file and print at home or with a print shop of your choice."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        },
+        "made": {
+          "label": "Made for You",
+          "summary": "Send us your photos and stories. Our team designs your issue, prints it and ships it to you.",
+          "steps": [
+            "Send an inquiry and tell us who the issue is for.",
+            "We confirm the details, timing and price with you before we begin.",
+            "We share how to send your photos and words.",
+            "Our team designs your issue, prints it and ships it to you."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        }
+      },
+      "image": null,
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "birthday",
+      "slug": "the-birthday-issue",
+      "name": "The Birthday Issue",
+      "category": "magazines",
+      "motif": "magazine",
+      "featured": true,
+      "shortDescription": "Their year, their face on the cover, their story in print.",
+      "longDescription": "A personalized birthday magazine that turns one person's year into a cover story. Favorite photos, inside jokes, milestones and messages from the people who love them, laid out like a real issue they can hold, flip through and keep.",
+      "intendedUse": "Milestone birthdays (16, 21, 30, 40, 50 and beyond). Birthday parties and dinner tables. Long-distance birthdays. Grandparents and parents who have everything. Kids' birthdays, kept as a yearly series.",
+      "occasions": [
+        "birthdays"
+      ],
+      "personalization": [
+        "A cover made around the birthday person, with their name and age as the headline",
+        "A welcome letter from you, the editor",
+        "A 'Year in Pictures' photo spread",
+        "An interview page with their favorites, firsts and hot takes",
+        "Messages from friends and family",
+        "A closing page with a wish for the year ahead"
+      ],
+      "perfectFor": [
+        "Milestone birthdays (16, 21, 30, 40, 50 and beyond)",
+        "Birthday parties and dinner tables",
+        "Long-distance birthdays",
+        "Grandparents and parents who have everything",
+        "Kids' birthdays, kept as a yearly series"
+      ],
+      "formats": [
+        "Magazine",
+        "Newspaper"
+      ],
+      "coverPhoto": "editorial",
+      "offers": {
+        "diy": {
+          "label": "DIY Template",
+          "summary": "An editable template you fill in with your own photos and words. Every page is already designed.",
+          "steps": [
+            "Choose your edition and check out.",
+            "Open your editable template from the link you receive.",
+            "Add your photos, names and words. Every page is laid out for you.",
+            "Download your finished file and print at home or with a print shop of your choice."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        },
+        "made": {
+          "label": "Made for You",
+          "summary": "Send us your photos and stories. Our team designs your issue, prints it and ships it to you.",
+          "steps": [
+            "Send an inquiry and tell us who the issue is for.",
+            "We confirm the details, timing and price with you before we begin.",
+            "We share how to send your photos and words.",
+            "Our team designs your issue, prints it and ships it to you."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        }
+      },
+      "image": null,
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "love",
+      "slug": "the-love-issue",
+      "name": "The Love Issue",
+      "category": "magazines",
+      "motif": "magazine",
+      "featured": false,
+      "shortDescription": "Your love story, written like it deserves a front page.",
+      "longDescription": "A magazine about the two of you. How you met, the trips, the everyday moments and the promises, told in photos and words and printed as an issue you can give, frame or bring out every anniversary.",
+      "intendedUse": "Anniversaries. Valentine's Day. Proposals and engagement gifts. Long-distance relationships. Just-because gifts.",
+      "occasions": [
+        "couples",
+        "anniversaries"
+      ],
+      "personalization": [
+        "A cover starring the two of you",
+        "'How It Started': the story of how you met",
+        "A timeline of your firsts",
+        "A photo spread of favorite moments together",
+        "A 'Things I Love About You' page",
+        "A love letter to close the issue"
+      ],
+      "perfectFor": [
+        "Anniversaries",
+        "Valentine's Day",
+        "Proposals and engagement gifts",
+        "Long-distance relationships",
+        "Just-because gifts"
+      ],
+      "formats": [
+        "Magazine",
+        "Newspaper"
+      ],
+      "coverPhoto": "hands",
+      "offers": {
+        "diy": {
+          "label": "DIY Template",
+          "summary": "An editable template you fill in with your own photos and words. Every page is already designed.",
+          "steps": [
+            "Choose your edition and check out.",
+            "Open your editable template from the link you receive.",
+            "Add your photos, names and words. Every page is laid out for you.",
+            "Download your finished file and print at home or with a print shop of your choice."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        },
+        "made": {
+          "label": "Made for You",
+          "summary": "Send us your photos and stories. Our team designs your issue, prints it and ships it to you.",
+          "steps": [
+            "Send an inquiry and tell us who the issue is for.",
+            "We confirm the details, timing and price with you before we begin.",
+            "We share how to send your photos and words.",
+            "Our team designs your issue, prints it and ships it to you."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        }
+      },
+      "image": null,
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "best-friends",
+      "slug": "the-best-friends-issue",
+      "name": "The Best Friends Issue",
+      "category": "magazines",
+      "motif": "magazine",
+      "featured": false,
+      "shortDescription": "For the friend who was there for every chapter.",
+      "longDescription": "A magazine that celebrates a friendship: the history, the trips, the group chats and the moments only the two (or ten) of you understand. It turns years of camera-roll memories into something you can hand over in person.",
+      "intendedUse": "Friend birthdays. Galentine's and friendsgiving. Moving-away and going-away gifts. Bridal party and graduation gifts. Celebrating a friendship anniversary.",
+      "occasions": [
+        "best-friends"
+      ],
+      "personalization": [
+        "A cover made for your friendship",
+        "'The Origin Story': how it all began",
+        "A 'Most Likely To' superlatives page",
+        "A photo spread of your best moments",
+        "Inside jokes and quotes worth keeping",
+        "A thank-you letter from you"
+      ],
+      "perfectFor": [
+        "Friend birthdays",
+        "Galentine's and friendsgiving",
+        "Moving-away and going-away gifts",
+        "Bridal party and graduation gifts",
+        "Celebrating a friendship anniversary"
+      ],
+      "formats": [
+        "Magazine",
+        "Newspaper"
+      ],
+      "coverPhoto": "flatlay",
+      "offers": {
+        "diy": {
+          "label": "DIY Template",
+          "summary": "An editable template you fill in with your own photos and words. Every page is already designed.",
+          "steps": [
+            "Choose your edition and check out.",
+            "Open your editable template from the link you receive.",
+            "Add your photos, names and words. Every page is laid out for you.",
+            "Download your finished file and print at home or with a print shop of your choice."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        },
+        "made": {
+          "label": "Made for You",
+          "summary": "Send us your photos and stories. Our team designs your issue, prints it and ships it to you.",
+          "steps": [
+            "Send an inquiry and tell us who the issue is for.",
+            "We confirm the details, timing and price with you before we begin.",
+            "We share how to send your photos and words.",
+            "Our team designs your issue, prints it and ships it to you."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        }
+      },
+      "image": null,
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "wedding",
+      "slug": "the-wedding-issue",
+      "name": "The Wedding Issue",
+      "category": "magazines",
+      "motif": "magazine",
+      "featured": false,
+      "shortDescription": "The whole day, from getting ready to last dance, in print.",
+      "longDescription": "A wedding recap magazine that tells the story of your day the way a feature would: the details, the people, the vows and the moments you did not see because you were busy getting married. A keepsake for the two of you and a lovely thank-you for family.",
+      "intendedUse": "Newlyweds after the big day. Thank-you gifts for parents and the wedding party. First anniversary gifts. Vow renewals. Elopements and small weddings.",
+      "occasions": [
+        "weddings"
+      ],
+      "personalization": [
+        "A cover with the couple and the date",
+        "'The Story So Far': how you got here",
+        "Getting-ready and ceremony spreads",
+        "A vows page",
+        "Reception and dance-floor highlights",
+        "A thank-you page for your guests and wedding party"
+      ],
+      "perfectFor": [
+        "Newlyweds after the big day",
+        "Thank-you gifts for parents and the wedding party",
+        "First anniversary gifts",
+        "Vow renewals",
+        "Elopements and small weddings"
+      ],
+      "formats": [
+        "Magazine",
+        "Newspaper"
+      ],
+      "coverPhoto": "hero",
+      "offers": {
+        "diy": {
+          "label": "DIY Template",
+          "summary": "An editable template you fill in with your own photos and words. Every page is already designed.",
+          "steps": [
+            "Choose your edition and check out.",
+            "Open your editable template from the link you receive.",
+            "Add your photos, names and words. Every page is laid out for you.",
+            "Download your finished file and print at home or with a print shop of your choice."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        },
+        "made": {
+          "label": "Made for You",
+          "summary": "Send us your photos and stories. Our team designs your issue, prints it and ships it to you.",
+          "steps": [
+            "Send an inquiry and tell us who the issue is for.",
+            "We confirm the details, timing and price with you before we begin.",
+            "We share how to send your photos and words.",
+            "Our team designs your issue, prints it and ships it to you."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        }
+      },
+      "image": null,
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
+    {
+      "id": "first-year",
+      "slug": "the-first-year-issue",
+      "name": "The First Year Issue",
+      "category": "magazines",
+      "motif": "magazine",
+      "featured": false,
+      "shortDescription": "Twelve months of firsts, kept in one place.",
+      "longDescription": "A first-year magazine for a growing family. Month-by-month photos, milestones and the little notes parents always mean to write down, gathered into an issue the family can read now and pass down later.",
+      "intendedUse": "First birthdays. Gifts for new parents and grandparents. Baby book alternatives. Family reunions and holidays.",
+      "occasions": [
+        "first-year",
+        "family"
+      ],
+      "personalization": [
+        "A cover for the little one's first year",
+        "A welcome page for the day they arrived",
+        "Month-by-month photo pages",
+        "A milestones and firsts page",
+        "A letter from the parents",
+        "A family and visitors page"
+      ],
+      "perfectFor": [
+        "First birthdays",
+        "Gifts for new parents and grandparents",
+        "Baby book alternatives",
+        "Family reunions and holidays"
+      ],
+      "formats": [
+        "Magazine",
+        "Newspaper"
+      ],
+      "coverPhoto": "flatlay",
+      "offers": {
+        "diy": {
+          "label": "DIY Template",
+          "summary": "An editable template you fill in with your own photos and words. Every page is already designed.",
+          "steps": [
+            "Choose your edition and check out.",
+            "Open your editable template from the link you receive.",
+            "Add your photos, names and words. Every page is laid out for you.",
+            "Download your finished file and print at home or with a print shop of your choice."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        },
+        "made": {
+          "label": "Made for You",
+          "summary": "Send us your photos and stories. Our team designs your issue, prints it and ships it to you.",
+          "steps": [
+            "Send an inquiry and tell us who the issue is for.",
+            "We confirm the details, timing and price with you before we begin.",
+            "We share how to send your photos and words.",
+            "Our team designs your issue, prints it and ships it to you."
+          ],
+          "price": null,
+          "checkoutUrl": ""
+        }
+      },
+      "image": null,
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "preview",
+      "ownerReview": "pending"
+    },
     {
       "id": "custom-magazine",
       "slug": "custom-magazine",
@@ -89,11 +568,35 @@
       "shortDescription": "A personalized magazine concept built around someone's photos, stories, and milestones.",
       "longDescription": "This is the heart of the collection: a magazine made around one person, one couple, or one group of friends. Picture a cover with their name in the masthead, pages that move through the moments you choose, and words that sound like the people who know them best. It is a keepsake meant to be read, passed around, and saved, whether it becomes a custom birthday magazine, an anniversary magazine, a friendship magazine, or a graduation keepsake.",
       "intendedUse": "A centerpiece gift for a milestone birthday, anniversary, graduation, or a celebration of someone you love.",
-      "occasions": ["birthdays", "anniversaries", "best-friends", "graduations", "couples", "family", "weddings", "school-team"],
-      "personalization": ["Cover title and masthead name", "Cover photo", "Photos throughout the pages", "Personal messages and letters", "Captions, inside jokes, and favorite quotes"],
+      "occasions": [
+        "birthdays",
+        "anniversaries",
+        "best-friends",
+        "graduations",
+        "couples",
+        "family",
+        "weddings",
+        "school-team"
+      ],
+      "personalization": [
+        "Cover title and masthead name",
+        "Cover photo",
+        "Photos throughout the pages",
+        "Personal messages and letters",
+        "Captions, inside jokes, and favorite quotes"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -106,11 +609,32 @@
       "shortDescription": "A starting layout for arranging a personal cover story and memorable pages.",
       "longDescription": "Not sure where to begin? A template gives you a designed starting point: a cover style, page layouts, and places for photos and words. You choose the direction and bring the story, so the finished pages still feel completely personal.",
       "intendedUse": "For anyone who wants a clear structure to fill with their own photos and words.",
-      "occasions": ["birthdays", "anniversaries", "best-friends", "graduations", "couples", "family"],
-      "personalization": ["Choice of layout style", "Your photos in each frame", "Headlines and captions in your words", "Colors to suit the occasion"],
+      "occasions": [
+        "birthdays",
+        "anniversaries",
+        "best-friends",
+        "graduations",
+        "couples",
+        "family"
+      ],
+      "personalization": [
+        "Choice of layout style",
+        "Your photos in each frame",
+        "Headlines and captions in your words",
+        "Colors to suit the occasion"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -123,11 +647,30 @@
       "shortDescription": "A compact keepsake concept for a collection of favorite moments.",
       "longDescription": "A smaller format for a shorter story. It suits a handful of favorite photos, a heartfelt note, or a quick look back at a season together. Easy to tuck into a card, a bag, or a gift box.",
       "intendedUse": "A thoughtful small gift, a party favor idea, or a companion to a larger keepsake.",
-      "occasions": ["birthdays", "best-friends", "couples", "graduations", "weddings"],
-      "personalization": ["Cover title and photo", "A short collection of favorite photos", "A personal note"],
+      "occasions": [
+        "birthdays",
+        "best-friends",
+        "couples",
+        "graduations",
+        "weddings"
+      ],
+      "personalization": [
+        "Cover title and photo",
+        "A short collection of favorite photos",
+        "A personal note"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -140,11 +683,32 @@
       "shortDescription": "A headline-inspired format for milestones, announcements, and personal stories.",
       "longDescription": "Big headlines, columns of stories, and photos laid out like the front page. This format makes any milestone feel like breaking news, from a graduation announcement to a front-page tribute for someone's big birthday.",
       "intendedUse": "Announcements, milestone tributes, and celebrations that deserve a headline.",
-      "occasions": ["birthdays", "anniversaries", "graduations", "weddings", "school-team", "family"],
-      "personalization": ["Front-page headline", "Stories and announcements in your words", "Photos with captions", "Dates and names"],
+      "occasions": [
+        "birthdays",
+        "anniversaries",
+        "graduations",
+        "weddings",
+        "school-team",
+        "family"
+      ],
+      "personalization": [
+        "Front-page headline",
+        "Stories and announcements in your words",
+        "Photos with captions",
+        "Dates and names"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -157,11 +721,28 @@
       "shortDescription": "A playful concept for collecting affectionate notes and shared memories.",
       "longDescription": "Part keepsake, part activity. Imagine pages waiting to be filled with photo stickers and little notes, put together one memory at a time. It is a sweet way to celebrate a relationship or a friendship and enjoy making it together.",
       "intendedUse": "A gift for a partner or best friend that you finish together.",
-      "occasions": ["couples", "anniversaries", "best-friends"],
-      "personalization": ["Your photos as stickers", "Short notes and messages", "Cover title"],
+      "occasions": [
+        "couples",
+        "anniversaries",
+        "best-friends"
+      ],
+      "personalization": [
+        "Your photos as stickers",
+        "Short notes and messages",
+        "Cover title"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -174,11 +755,32 @@
       "shortDescription": "A simple way to pair a favorite image with a meaningful message.",
       "longDescription": "One photo and the words that go with it. A photo card can travel with a larger gift or stand on its own as a note someone keeps on the fridge, the desk, or the mirror.",
       "intendedUse": "A message to go with a gift, or a small keepsake on its own.",
-      "occasions": ["birthdays", "anniversaries", "best-friends", "graduations", "couples", "family", "weddings"],
-      "personalization": ["A favorite photo", "A personal message", "Name and date"],
+      "occasions": [
+        "birthdays",
+        "anniversaries",
+        "best-friends",
+        "graduations",
+        "couples",
+        "family",
+        "weddings"
+      ],
+      "personalization": [
+        "A favorite photo",
+        "A personal message",
+        "Name and date"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -191,11 +793,30 @@
       "shortDescription": "A nostalgic photo-print concept for memorable snapshots.",
       "longDescription": "The familiar look of an instant snapshot, with a white border and room for a short caption. They are made for pinning up, tucking into a magazine, or handing out as little reminders of a great day.",
       "intendedUse": "Decor, scrapbooks, gift add-ins, and party keepsakes.",
-      "occasions": ["birthdays", "best-friends", "couples", "graduations", "weddings", "school-team"],
-      "personalization": ["Your snapshots", "Short handwritten-style captions"],
+      "occasions": [
+        "birthdays",
+        "best-friends",
+        "couples",
+        "graduations",
+        "weddings",
+        "school-team"
+      ],
+      "personalization": [
+        "Your snapshots",
+        "Short handwritten-style captions"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -208,11 +829,30 @@
       "shortDescription": "Personal keepsake cards for a message, a memory, or a pair of favorite photos.",
       "longDescription": "Choose one photo for a single moment or two side by side for a then-and-now, a you-and-me, or a before-and-after. Add a line or two that says exactly what you mean.",
       "intendedUse": "Then-and-now comparisons, couple and friendship cards, or a personal note.",
-      "occasions": ["anniversaries", "best-friends", "couples", "family", "graduations"],
-      "personalization": ["One or two photos", "A short message", "Names and dates"],
+      "occasions": [
+        "anniversaries",
+        "best-friends",
+        "couples",
+        "family",
+        "graduations"
+      ],
+      "personalization": [
+        "One or two photos",
+        "A short message",
+        "Names and dates"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -225,11 +865,28 @@
       "shortDescription": "A coordinated collection of photographs worth revisiting.",
       "longDescription": "A set of your chosen photos, printed to be held, shared, and revisited. A print pack pairs well with a magazine or works as a simple gift for someone who would love to see the photos off the screen.",
       "intendedUse": "Sharing a set of favorite photos or completing a larger gift.",
-      "occasions": ["family", "weddings", "graduations", "best-friends", "school-team"],
-      "personalization": ["Your selection of photos"],
+      "occasions": [
+        "family",
+        "weddings",
+        "graduations",
+        "best-friends",
+        "school-team"
+      ],
+      "personalization": [
+        "Your selection of photos"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -242,11 +899,29 @@
       "shortDescription": "A sequence of moments presented in a photo-booth-inspired layout.",
       "longDescription": "A short run of photos stacked in a narrow strip, like the ones from a photo booth. It tells a tiny story in a few frames and makes a sweet bookmark, favor, or add-in.",
       "intendedUse": "Favors, bookmarks, and small add-ins for a bigger gift.",
-      "occasions": ["best-friends", "couples", "weddings", "birthdays", "school-team"],
-      "personalization": ["A short sequence of photos", "A name, date, or short line"],
+      "occasions": [
+        "best-friends",
+        "couples",
+        "weddings",
+        "birthdays",
+        "school-team"
+      ],
+      "personalization": [
+        "A short sequence of photos",
+        "A name, date, or short line"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -259,11 +934,30 @@
       "shortDescription": "Thoughtful finishing touches to complement a keepsake.",
       "longDescription": "Small details that help the whole gift feel considered, such as a personal note or a coordinated finishing touch. The available extras will be listed here as the collection comes together.",
       "intendedUse": "Completing a magazine or photo keepsake gift.",
-      "occasions": ["birthdays", "anniversaries", "best-friends", "graduations", "couples", "family", "weddings"],
-      "personalization": ["A personal note"],
+      "occasions": [
+        "birthdays",
+        "anniversaries",
+        "best-friends",
+        "graduations",
+        "couples",
+        "family",
+        "weddings"
+      ],
+      "personalization": [
+        "A personal note"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     },
     {
@@ -276,23 +970,40 @@
       "shortDescription": "Coordinated keepsake combinations for a meaningful gift.",
       "longDescription": "A magazine with matching photo keepsakes, gathered so the whole gift tells one story. Bundles make it easy to give something complete without choosing every piece separately.",
       "intendedUse": "A complete gift for a milestone, chosen as one coordinated set.",
-      "occasions": ["birthdays", "anniversaries", "best-friends", "graduations", "couples", "weddings"],
-      "personalization": ["Everything you would personalize in each included piece"],
+      "occasions": [
+        "birthdays",
+        "anniversaries",
+        "best-friends",
+        "graduations",
+        "couples",
+        "weddings"
+      ],
+      "personalization": [
+        "Everything you would personalize in each included piece"
+      ],
       "image": null,
-      "specs": { "format": null, "dimensions": null, "pageCount": null, "materials": null, "price": null, "currency": "USD", "turnaround": null, "fulfillment": null },
-      "publicationStatus": "preview",
+      "specs": {
+        "format": null,
+        "dimensions": null,
+        "pageCount": null,
+        "materials": null,
+        "price": null,
+        "currency": "USD",
+        "turnaround": null,
+        "fulfillment": null
+      },
+      "publicationStatus": "hidden",
       "ownerReview": "pending"
     }
   ],
-
   "productPage": {
-    "backLabel": "Back to all keepsakes",
-    "personalizeHeading": "What you can personalize",
-    "useHeading": "A good fit for",
+    "backLabel": "Back to all issues",
+    "personalizeHeading": "What's inside",
+    "useHeading": "Perfect for",
     "occasionsHeading": "Occasions",
     "detailsHeading": "Details",
     "detailsPending": "Format, size, and pricing details will be shared here as this collection opens. Have a question in the meantime? We would love to hear what you are planning.",
-    "inquiryCta": "Ask about this keepsake",
+    "inquiryCta": "Ask about this issue",
     "specLabels": {
       "format": "Format",
       "dimensions": "Size",
@@ -301,50 +1012,125 @@
       "price": "Price",
       "turnaround": "Production time",
       "fulfillment": "Delivery"
-    }
+    },
+    "offersHeading": "Choose how you want it",
+    "formatsLabel": "Comes as",
+    "comingSoon": "Ordering opens soon. Ask us a question in the meantime."
   },
-
   "journey": {
     "heading": "Make it unmistakably theirs.",
     "copy": "A birthday cover story. A collection of friendship memories. A celebration of everything you have built together. Start with the occasion, then bring your photos, words, and personality into the pages.",
     "note": "These are example layouts to spark ideas. Your final pages depend on the format you choose.",
     "pages": [
-      { "id": "front-cover", "label": "Front cover", "motif": "cover", "description": "Set the tone with a title, a favorite photo, and the name of the person you are celebrating." },
-      { "id": "opening-page", "label": "Opening page", "motif": "opening", "description": "Begin with a dedication, a letter, or a few words about why this story matters." },
-      { "id": "interior-spread", "label": "Interior spread", "motif": "spread", "description": "Let photos and captions carry the story across two facing pages." },
-      { "id": "closing-page", "label": "Closing page", "motif": "closing", "description": "End with a meaningful message, a favorite memory, or a note from the people who love them." },
-      { "id": "back-cover", "label": "Back cover", "motif": "back", "description": "Finish with one more photo, a short line, or a simple signature detail." }
+      {
+        "id": "front-cover",
+        "label": "Front cover",
+        "motif": "cover",
+        "description": "Set the tone with a title, a favorite photo, and the name of the person you are celebrating."
+      },
+      {
+        "id": "opening-page",
+        "label": "Opening page",
+        "motif": "opening",
+        "description": "Begin with a dedication, a letter, or a few words about why this story matters."
+      },
+      {
+        "id": "interior-spread",
+        "label": "Interior spread",
+        "motif": "spread",
+        "description": "Let photos and captions carry the story across two facing pages."
+      },
+      {
+        "id": "closing-page",
+        "label": "Closing page",
+        "motif": "closing",
+        "description": "End with a meaningful message, a favorite memory, or a note from the people who love them."
+      },
+      {
+        "id": "back-cover",
+        "label": "Back cover",
+        "motif": "back",
+        "description": "Finish with one more photo, a short line, or a simple signature detail."
+      }
     ],
     "viewerPrev": "Previous page",
     "viewerNext": "Next page",
     "viewerClose": "Close"
   },
-
   "howItWorks": {
-    "heading": "From favorite photos to a personal story.",
+    "heading": "From your camera roll to a cover story.",
     "steps": [
-      { "title": "Choose your direction.", "copy": "Explore the magazine styles and decide what you want to celebrate." },
-      { "title": "Gather your story.", "copy": "Collect the photos, messages, names, and details you would like to include." },
-      { "title": "Make it personal.", "copy": "Bring your chosen format together with the people and moments that matter." }
+      {
+        "title": "Choose your issue.",
+        "copy": "Pick the occasion, then a magazine or a newspaper."
+      },
+      {
+        "title": "Gather your story.",
+        "copy": "Collect the photos, names, messages and memories you want inside."
+      },
+      {
+        "title": "Make it yours, or let us.",
+        "copy": "Fill in the DIY Template yourself, or send everything to us and we design, print and ship it."
+      }
     ]
   },
-
   "occasions": {
     "heading": "Every chapter has a reason to celebrate.",
     "copy": "Start with the occasion. Make the story your own.",
     "showIdeasLabel": "Show keepsakes for this occasion",
     "items": [
-      { "id": "birthdays", "label": "Birthdays", "idea": "Put the birthday person on the cover and fill the pages with their year, their people, and the stories everyone tells about them." },
-      { "id": "anniversaries", "label": "Anniversaries", "idea": "Tell the story of the two of you, from the first photo together to the chapter you are in now." },
-      { "id": "best-friends", "label": "Best Friends", "idea": "Collect the trips, the group chats, and the inside jokes nobody else would understand." },
-      { "id": "graduations", "label": "Graduations", "idea": "Celebrate the hard work, the late nights, and the people who cheered them across the stage." },
-      { "id": "couples", "label": "Couples", "idea": "A love story in pages: date nights, favorite places, and the little things that make you, you." },
-      { "id": "family", "label": "Family Memories", "idea": "Gather generations of photos and stories into one keepsake the whole family can pass around." },
-      { "id": "weddings", "label": "Weddings & Wedding Parties", "idea": "A keepsake for the couple, or a thank-you for the friends who stood beside them." },
-      { "id": "school-team", "label": "School & Team Milestones", "idea": "Mark a season, a championship, or a graduating class with photos and words from the group." }
+      {
+        "id": "birthdays",
+        "label": "Birthdays",
+        "idea": "Put the birthday person on the cover and fill the pages with their year, their people, and the stories everyone tells about them."
+      },
+      {
+        "id": "anniversaries",
+        "label": "Anniversaries",
+        "idea": "Tell the story of the two of you, from the first photo together to the chapter you are in now."
+      },
+      {
+        "id": "best-friends",
+        "label": "Best Friends",
+        "idea": "Collect the trips, the group chats, and the inside jokes nobody else would understand."
+      },
+      {
+        "id": "graduations",
+        "label": "Graduations",
+        "idea": "Celebrate the hard work, the late nights, and the people who cheered them across the stage."
+      },
+      {
+        "id": "couples",
+        "label": "Couples",
+        "idea": "A love story in pages: date nights, favorite places, and the little things that make you, you."
+      },
+      {
+        "id": "family",
+        "label": "Family Memories",
+        "idea": "Gather generations of photos and stories into one keepsake the whole family can pass around."
+      },
+      {
+        "id": "weddings",
+        "label": "Weddings & Wedding Parties",
+        "idea": "A keepsake for the couple, or a thank-you for the friends who stood beside them."
+      },
+      {
+        "id": "school-team",
+        "label": "School & Team Milestones",
+        "idea": "Mark a season, a championship, or a graduating class with photos and words from the group."
+      },
+      {
+        "id": "first-year",
+        "label": "Baby's First Year",
+        "idea": "Month-by-month photos, firsts and a letter from the parents."
+      },
+      {
+        "id": "year-in-review",
+        "label": "Year in Review",
+        "idea": "A personalized yearbook of your year, for the holidays and New Year."
+      }
     ]
   },
-
   "publisher": {
     "heading": "Personal stories, thoughtfully presented.",
     "copy": "Lyfe Moment Co. celebrates the details that make a moment yours. This publishing collection brings that same spirit to personalized magazines and keepsakes, with space for your photos, your words, and your point of view.",
@@ -357,13 +1143,14 @@
       "alt": "Bread of Lyfe Publishing"
     }
   },
-
   "schools": {
     "heading": "A meaningful way to celebrate your people.",
     "copy": "Have a school milestone, team celebration, or business story in mind? Tell us what you are creating, who it is for, and when you need it.",
-    "cta": { "label": "Discuss a Publishing Project", "href": "#inquiry" }
+    "cta": {
+      "label": "Discuss a Publishing Project",
+      "href": "#inquiry"
+    }
   },
-
   "inquiryForm": {
     "id": "inquiry",
     "heading": "Tell us about your project.",
@@ -399,7 +1186,6 @@
       "fixErrors": "Please check the highlighted fields."
     }
   },
-
   "faq": {
     "heading": "Questions, answered.",
     "items": [
@@ -450,23 +1236,35 @@
       }
     ]
   },
-
   "finalCta": {
-    "heading": "Give the moment its own story.",
-    "copy": "Explore a personalized keepsake for the people and milestones you want to remember.",
-    "primaryCta": { "label": "Explore Magazines", "href": "#magazines" },
-    "secondaryCta": { "label": "Ask a Publishing Question", "href": "#inquiry" }
+    "heading": "Every moment deserves a cover.",
+    "copy": "Choose your issue, gather your favorite photos, and make it yours.",
+    "primaryCta": {
+      "label": "Shop the Issues",
+      "href": "#magazines"
+    },
+    "secondaryCta": {
+      "label": "Ask a Publishing Question",
+      "href": "#inquiry"
+    }
   },
-
   "footer": {
     "publisherLine": "Publishing collection by Bread of Lyfe Publishing.",
     "links": [
-      { "label": "Lyfe Moment Co. home", "href": "/" },
-      { "label": "Privacy notice", "href": "policies/#privacy" },
-      { "label": "Ordering, shipping & returns", "href": "policies/#ordering" }
+      {
+        "label": "Lyfe Moment Co. home",
+        "href": "/"
+      },
+      {
+        "label": "Privacy notice",
+        "href": "policies/#privacy"
+      },
+      {
+        "label": "Ordering, shipping & returns",
+        "href": "policies/#ordering"
+      }
     ]
   },
-
   "policies": {
     "title": "Privacy & Ordering Information | Lyfe Moment Co.",
     "heading": "Privacy and ordering information",
@@ -491,5 +1289,65 @@
         ]
       }
     ]
+  },
+  "_hiddenHelp": "Products with publicationStatus \"hidden\" and categories with hidden:true stay in this file but do not appear on the site. Change publicationStatus to \"preview\" to show one again.",
+  "photos": {
+    "_help": "Background photos. Put the files in magazine/assets/img/. If a file is missing the page shows a soft butter-and-blue gradient instead.",
+    "hero": {
+      "src": "assets/img/hero-pool.jpg",
+      "width": 2752,
+      "height": 1536,
+      "alt": "Pool terrace at sunset with powder-blue striped umbrellas, magazines, a butter-yellow feather boa and crystals"
+    },
+    "editorial": {
+      "src": "assets/img/editorial-feather-dress.jpg",
+      "width": 1856,
+      "height": 2304,
+      "alt": "A woman in a butter-yellow and powder-blue feather dress with crystal trim, poolside at sunset"
+    },
+    "hands": {
+      "src": "assets/img/hands-magazine.jpg",
+      "width": 1856,
+      "height": 2304,
+      "alt": "Hands holding a glossy personalized magazine by the pool"
+    },
+    "flatlay": {
+      "src": "assets/img/flatlay.jpg",
+      "width": 2048,
+      "height": 2048,
+      "alt": "An open magazine and a folded newspaper with butter and powder-blue feathers and crystals"
+    }
+  },
+  "ways": {
+    "heading": "Two ways to get your issue.",
+    "items": [
+      {
+        "id": "diy",
+        "title": "DIY Template",
+        "copy": "An editable magazine or newspaper you fill in with your own photos and words. Every page is already designed. Download it and print anywhere."
+      },
+      {
+        "id": "made",
+        "title": "Made for You",
+        "copy": "Send us your photos and stories. Our team designs your issue, prints it and ships it to your door."
+      }
+    ]
+  },
+  "feature": {
+    "eyebrow": "Special edition",
+    "heading": "The 2026 Yearbook",
+    "script": "your year, in print",
+    "copy": "The trips, the wins, the hard seasons and the ordinary days of 2026, gathered into one glossy issue. A month-by-month look back, superlatives for the people in your year, and a page for your wishes for 2027.",
+    "note": "A gift for Christmas, New Year’s Eve and family year-end traditions.",
+    "cta": {
+      "label": "See the 2026 Yearbook",
+      "href": "products/the-2026-yearbook/"
+    }
+  },
+  "landingSections": {
+    "_help": "Sections hidden from the page for now. Set to true to show again.",
+    "journey": false,
+    "occasions": false,
+    "schools": false
   }
 }

@@ -53,28 +53,10 @@ async function run(browserType, label) {
     }
 
     if (w === 390 || w === 1280) {
-      // Filters
-      await page.locator('[data-filter-category="photo"]').click();
-      const visible = await page.locator('.product-card:visible').count();
-      check(`${label} ${w}px category filter`, visible === 3, `${visible} shown`);
-      await page.locator('[data-filter-category="all"]').click();
-      await page.locator('[data-occasion="couples"]').click();
-      await page.waitForTimeout(400);
-      const occVisible = await page.locator('.product-card:visible').count();
-      const sel = await page.locator('#f-occasion').inputValue();
-      check(`${label} ${w}px occasion filter + form preselect`, occVisible > 0 && occVisible < 12 && sel === 'couples', `${occVisible} shown, select=${sel}`);
-      await page.locator('[data-clear-occasion]').click();
-
-      // Viewer dialog
-      await page.locator('[data-viewer-open="2"]').click();
-      const open = await page.locator('dialog[data-viewer]').evaluate((d) => d.open);
-      const title = await page.locator('[data-viewer-title]').textContent();
-      await page.keyboard.press('ArrowRight');
-      const title2 = await page.locator('[data-viewer-title]').textContent();
-      await page.keyboard.press('Escape');
-      const closed = await page.locator('dialog[data-viewer]').evaluate((d) => !d.open);
-      const focusBack = await page.evaluate(() => document.activeElement.getAttribute('data-viewer-open'));
-      check(`${label} ${w}px page viewer opens, arrows, Escape, focus return`, open && title === 'Interior spread' && title2 === 'Closing page' && closed && focusBack === '2');
+      // Only the six magazine & newspaper issues are listed
+      const cards = await page.locator('.product-card:visible').count();
+      const hiddenShown = await page.locator('[data-product="photo-strips"], [data-product="custom-magazine"]').count();
+      check(`${label} ${w}px six issues listed, hidden products absent`, cards === 6 && hiddenShown === 0, `${cards} cards`);
 
       // FAQ accordion
       const det = page.locator('.faq__item').first();
@@ -93,7 +75,7 @@ async function run(browserType, label) {
       page.on('request', (r) => { if (r.method() === 'POST') posts.push(r.url()); });
       await page.fill('#f-name', 'QA Preview');
       await page.fill('#f-email', 'qa@example.com');
-      await page.selectOption('#f-interest', 'pocket-magazine');
+      await page.selectOption('#f-interest', 'the-love-issue');
       await page.selectOption('#f-occasion', 'birthdays');
       await page.fill('#f-notes', '[TEST] preview mode check');
       await page.check('#f-privacy');
@@ -114,7 +96,7 @@ async function run(browserType, label) {
   await page.goto(`${BASE}/magazine/`, { waitUntil: 'networkidle' });
   // Post exactly what the form posts when connected.
   const resp = await page.evaluate(async () => {
-    const r = await fetch('/api/magazine-inquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: 'QA Test', email: 'qa@example.com', interest: 'custom-magazine', occasion: 'birthdays', notes: '[TEST] browser QA submission', privacyAck: true, marketingOptIn: false, website: '', startedAt: String(Date.now() - 10000) }) });
+    const r = await fetch('/api/magazine-inquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: 'QA Test', email: 'qa@example.com', interest: 'the-birthday-issue', occasion: 'birthdays', notes: '[TEST] browser QA submission', privacyAck: true, marketingOptIn: false, website: '', startedAt: String(Date.now() - 10000) }) });
     return { status: r.status, body: await r.json() };
   });
   check(`${label} endpoint responds honestly`, (resp.status === 200 && /^LMC-/.test(resp.body.reference)) || resp.status === 503, `${resp.status} ${JSON.stringify(resp.body)}`);
@@ -123,17 +105,17 @@ async function run(browserType, label) {
   // Direct loads and refresh of routes
   const ctx2 = await browser.newContext();
   const p2 = await ctx2.newPage();
-  for (const route of ['/magazine', '/magazine/', '/magazine/products/custom-magazine/', '/magazine/products/photo-strips/', '/magazine/policies/']) {
+  for (const route of ['/magazine', '/magazine/', '/magazine/products/the-birthday-issue/', '/magazine/products/the-2026-yearbook/', '/magazine/policies/']) {
     const r = await p2.goto(BASE + route);
     const r2 = await p2.reload();
     check(`${label} direct load + refresh ${route}`, r.ok() && r2.ok(), `${r.status()}/${r2.status()}`);
   }
   const r404 = await p2.goto(BASE + '/magazine/products/does-not-exist/');
   check(`${label} unknown product returns 404`, r404.status() === 404);
-  await p2.goto(`${BASE}/magazine/products/pocket-magazine/`);
-  await p2.locator('a', { hasText: 'Ask about this keepsake' }).click();
+  await p2.goto(`${BASE}/magazine/products/the-love-issue/`);
+  await p2.locator('a', { hasText: 'Ask about this issue' }).click();
   await p2.waitForLoadState('networkidle');
-  check(`${label} product page CTA preselects interest`, (await p2.locator('#f-interest').inputValue()) === 'pocket-magazine');
+  check(`${label} product page CTA preselects interest`, (await p2.locator('#f-interest').inputValue()) === 'the-love-issue');
   // Every internal link resolves
   await p2.goto(`${BASE}/magazine/`);
   const links = await p2.evaluate(() => [...new Set([...document.querySelectorAll('a[href]')].map((a) => a.href).filter((h) => h.startsWith(location.origin)))]);
