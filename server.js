@@ -109,7 +109,9 @@ const path = require('path');
 // The old shop at / is untouched until Barbie decides to switch the homepage.
 app.use('/magazines', express.static(path.join(__dirname, 'site')));
 
-app.post('/api/inquiry', (req, res) => {
+// Same handler at POST / (form-encoded, matching Netlify Forms) and /api/inquiry (JSON).
+app.use(express.urlencoded({ extended: false }));
+const saveInquiry = (req, res) => {
   const b = req.body || {};
   if (b.company_website) return res.json({ ok: true }); // honeypot: quietly drop bots
   const name = String(b.name || '').trim().slice(0, 200);
@@ -123,7 +125,7 @@ app.post('/api/inquiry', (req, res) => {
     name, email,
     phone: pick('phone'), role: pick('role'), edition: pick('edition'),
     needed_by: pick('needed_by'), copies: pick('copies'), notes: pick('notes'),
-    nda: b.nda === 'yes', source: pick('source'),
+    nda: b.nda === 'yes', headlines: b.headlines === 'yes', source: pick('source'),
   };
   fs.appendFile(path.join(__dirname, 'inquiries.jsonl'), JSON.stringify(entry) + '\n', (err) => {
     if (err) {
@@ -133,7 +135,9 @@ app.post('/api/inquiry', (req, res) => {
     console.log(`New consultation request: ${entry.edition} from ${entry.name}`);
     res.json({ ok: true });
   });
-});
+};
+app.post('/', saveInquiry);
+app.post('/api/inquiry', saveInquiry);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, async () => {

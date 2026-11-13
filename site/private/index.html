@@ -248,7 +248,8 @@
       <p class="muted small">Everything you share here is confidential and used only to prepare your consultation.</p>
     </div>
 
-    <form class="form" id="inquiry" action="/api/inquiry" method="post" novalidate>
+    <form class="form" id="inquiry" name="consultation" action="/" method="post" data-netlify="true" netlify-honeypot="company_website" novalidate>
+      <input type="hidden" name="form-name" value="consultation">
       <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="source" value="landing-private-edition">
       <div class="two">

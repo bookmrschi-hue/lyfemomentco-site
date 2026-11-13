@@ -35,7 +35,8 @@
       <p class="lede">Tell us who the issue is for. An editor will reply personally within one business day to arrange a short consultation and send a secure invoice.</p>
       <p class="muted small">Everything you share here is confidential and used only to prepare your consultation.</p>
     </div>
-    <form class="form" id="inquiry" action="/api/inquiry" method="post" data-base="" novalidate>
+    <form class="form" id="inquiry" name="consultation" action="/" method="post" data-netlify="true" netlify-honeypot="company_website" data-base="" novalidate>
+      <input type="hidden" name="form-name" value="consultation">
       <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="source" value="site-inquire">
       <div class="two">

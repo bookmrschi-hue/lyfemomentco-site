@@ -1,4 +1,5 @@
-// Consultation form: posts JSON to /api/inquiry (server.js), then shows the thank-you page.
+// Consultation form: posts the fields form-encoded to "/" (Netlify Forms on Netlify,
+// the POST / handler in server.js when run locally), then shows the thank-you page.
 (function () {
   var form = document.getElementById('inquiry');
   if (!form) return;
@@ -28,12 +29,11 @@
       status.className = 'form-status error';
       return;
     }
-    var data = {};
-    new FormData(form).forEach(function (v, k) { data[k] = v; });
+    var data = new URLSearchParams(new FormData(form)).toString();
     var btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     status.textContent = 'Sending…';
-    fetch(form.action, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
       .then(function (res) { if (!res.ok) throw new Error(); location.href = base + 'thank-you.html'; })
       .catch(function () {
         btn.disabled = false;

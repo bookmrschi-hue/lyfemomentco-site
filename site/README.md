@@ -15,6 +15,8 @@ Static pages for the luxury magazine line. Served by `server.js` at `/magazines`
 
 Run locally: `npm install && npm start`, then open http://localhost:3000/magazines/private/
 
+On Netlify, `netlify.toml` serves the same pages at `/magazines/`. The form is a Netlify Form named `consultation`: turn on form detection in Netlify (Forms > Enable form detection) and add an email notification so requests reach the inbox.
+
 ## Before launch
 
 Text marked with the `tbc` class (highlighted in brass) still needs a decision:
@@ -26,4 +28,4 @@ Text marked with the `tbc` class (highlighted in brass) still needs a decision:
 - About page paragraph in Barbie's voice
 - File retention period on the privacy page; have privacy and terms reviewed
 
-Then remove the `tbc` class. Consultation requests are saved to `inquiries.jsonl` on the server; forward them to email or a CRM before launch. Payment is by invoice/payment link after consultation; no payment links are wired in yet.
+Then remove the `tbc` class. Locally, consultation requests are saved to `inquiries.jsonl`. Payment is by invoice/payment link after consultation; no payment links are wired in yet.
