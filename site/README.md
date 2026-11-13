@@ -26,4 +26,4 @@ Text marked with the `tbc` class (highlighted in brass) still needs a decision:
 - About page paragraph in Barbie's voice
 - File retention period on the privacy page; have privacy and terms reviewed
 
-Then remove the `tbc` class. Edition buttons link to the live Stripe payment links created in the launch plan thread (Year in Review $1,750 deposit, Birthday Issue $1,200, Editor's Template $550, The Headlines $395 on its own; $295 add-on offered at checkout).
+Then remove the `tbc` class. Edition buttons link to the live Stripe payment links created in the launch plan thread (Year in Review $1,750 deposit, Birthday Issue $1,200, Editor's Template button held as coming soon until the template exists, The Headlines $395 on its own; $295 add-on offered at checkout).
