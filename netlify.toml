@@ -1,0 +1,8 @@
+# Magazine site. No build command or publish directory is set here, so the
+# settings in the Netlify UI for the live site keep working unchanged.
+
+# Serve the new magazine site at /magazines (landing page: /magazines/private/).
+[[redirects]]
+  from = "/magazines/*"
+  to = "/site/:splat"
+  status = 200

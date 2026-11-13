@@ -19,9 +19,13 @@ let locationId = process.env.SQUARE_LOCATION_ID || null;
 
 async function resolveLocationId() {
   if (locationId && locationId !== 'YOUR_LOCATION_ID') return;
+  if (!process.env.SQUARE_ACCESS_TOKEN) {
+    console.warn('SQUARE_ACCESS_TOKEN not set; Square card checkout is off.');
+    return;
+  }
   try {
-    const locations = [];
-    for await (const loc of client.locations.list()) locations.push(loc);
+    const result = await client.locations.list();
+    const locations = (result && result.locations) || [];
     const active = locations.find(l => l.status === 'ACTIVE') || locations[0];
     if (active) {
       locationId = active.id;
@@ -69,13 +73,15 @@ app.post('/api/create-payment', async (req, res) => {
 });
 
 // ── Stripe PaymentIntent endpoint ───────────────────────────────────────────
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+// Only create the Stripe client when a key is set, so the site still runs without one.
+const stripe = process.env.STRIPE_SECRET_KEY ? require('stripe')(process.env.STRIPE_SECRET_KEY) : null;
 
 app.post('/api/create-payment-intent', async (req, res) => {
   const { amount, productName, treats } = req.body;
   if (!amount || isNaN(parseFloat(amount)) || parseFloat(amount) <= 0) {
     return res.status(400).json({ error: 'Invalid amount.' });
   }
+  if (!stripe) return res.status(503).json({ error: 'Card payments are not configured yet.' });
   try {
     const intent = await stripe.paymentIntents.create({
       amount: Math.round(parseFloat(amount) * 100),
@@ -92,6 +98,46 @@ app.post('/api/create-payment-intent', async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 });
+
+// ── Private Edition consultation requests (site/ pages) ─────────────────────
+// Saves each request to inquiries.jsonl (git-ignored) and logs it.
+// Before launch: also forward to email or a CRM so nothing waits on server logs.
+const fs = require('fs');
+const path = require('path');
+
+// The new magazine site lives at /magazines (landing page: /magazines/private/).
+// The old shop at / is untouched until Barbie decides to switch the homepage.
+app.use('/magazines', express.static(path.join(__dirname, 'site')));
+
+// Same handler at POST / (form-encoded, matching Netlify Forms) and /api/inquiry (JSON).
+app.use(express.urlencoded({ extended: false }));
+const saveInquiry = (req, res) => {
+  const b = req.body || {};
+  if (b.company_website) return res.json({ ok: true }); // honeypot: quietly drop bots
+  const name = String(b.name || '').trim().slice(0, 200);
+  const email = String(b.email || '').trim().slice(0, 200);
+  if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+    return res.status(400).json({ ok: false, error: 'Name and a valid email are required.' });
+  }
+  const pick = (k) => String(b[k] || '').slice(0, 4000);
+  const entry = {
+    at: new Date().toISOString(),
+    name, email,
+    phone: pick('phone'), role: pick('role'), edition: pick('edition'),
+    needed_by: pick('needed_by'), copies: pick('copies'), notes: pick('notes'),
+    nda: b.nda === 'yes', headlines: b.headlines === 'yes', source: pick('source'),
+  };
+  fs.appendFile(path.join(__dirname, 'inquiries.jsonl'), JSON.stringify(entry) + '\n', (err) => {
+    if (err) {
+      console.error('Could not save inquiry:', err.message);
+      return res.status(500).json({ ok: false });
+    }
+    console.log(`New consultation request: ${entry.edition} from ${entry.name}`);
+    res.json({ ok: true });
+  });
+};
+app.post('/', saveInquiry);
+app.post('/api/inquiry', saveInquiry);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, async () => {

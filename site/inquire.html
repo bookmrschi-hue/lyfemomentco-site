@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commission an Issue | Lyfe Moment</title>
+<meta name="description" content="Request a consultation for a Lyfe Moment magazine. An editor replies personally within one business day.">
+<meta property="og:title" content="Commission an Issue | Lyfe Moment">
+<meta property="og:description" content="Request a consultation for a Lyfe Moment magazine. An editor replies personally within one business day.">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/brand/club-crest.svg" alt=""><div><b>LYFE MOMENT</b><span>Bread of Lyfe Publishing</span></div></a>
+    <nav class="nav" aria-label="Main">
+      <a href="editions.html">Editions</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="private/index.html">The Year in Review</a>
+      <a href="about.html">About</a>
+      <a class="btn" href="inquire.html"><span class="long">Commission an issue</span><span class="short">Commission</span></a>
+    </nav>
+  </div>
+</header>
+<main>
+
+<section>
+  <div class="wrap split">
+    <div class="sticky-col">
+      <p class="kicker">Commission an issue</p>
+      <h1 style="font-size:clamp(2.6rem,5vw,4.4rem)">Begin your edition.</h1>
+      <p class="lede">Tell us who the issue is for. An editor will reply personally within one business day to arrange a short consultation and send a secure invoice.</p>
+      <p class="muted small">Everything you share here is confidential and used only to prepare your consultation.</p>
+    </div>
+    <div class="form-card">
+    <form class="form" id="inquiry" name="consultation" action="/" method="post" data-netlify="true" netlify-honeypot="company_website" data-base="" novalidate>
+      <input type="hidden" name="form-name" value="consultation">
+      <input class="hp" type="text" name="company_website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="source" value="site-inquire">
+      <div class="two">
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="two">
+        <div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field">
+          <label for="role">I am commissioning</label>
+          <select id="role" name="role">
+            <option>For myself</option>
+            <option>As a gift</option>
+            <option>On behalf of a principal or client</option>
+            <option>For a team, label, church or company</option>
+          </select>
+        </div>
+      </div>
+      <fieldset class="field">
+        <legend>Edition</legend>
+        <div class="choices">
+          <label><input type="radio" name="edition" value="Year in Review" checked> Year in Review</label>
+          <label><input type="radio" name="edition" value="Birthday Issue"> Birthday Issue</label>
+          <label><input type="radio" name="edition" value="Editor's Template"> Editor's Template</label>
+          <label><input type="radio" name="edition" value="Private Commission"> Private Commission</label>
+          <label><input type="radio" name="edition" value="Not sure"> Not sure yet</label>
+        </div>
+      </fieldset>
+      <label class="small muted" style="display:flex;gap:10px;align-items:flex-start"><input type="checkbox" name="headlines" value="yes" style="margin-top:6px;accent-color:var(--teal)"> Add The Headlines companion newspaper.</label>
+      <div class="two">
+        <div class="field"><label for="date">Needed by</label><input id="date" name="needed_by" type="date"></div>
+        <div class="field"><label for="copies">Printed copies</label>
+          <select id="copies" name="copies"><option>1 to 5</option><option>6 to 25</option><option>26 to 100</option><option>More than 100</option></select>
+        </div>
+      </div>
+      <div class="field"><label for="notes">Who is the issue about, and what should it capture?</label><textarea id="notes" name="notes"></textarea></div>
+      <label class="small muted" style="display:flex;gap:10px;align-items:flex-start"><input type="checkbox" name="nda" value="yes" style="margin-top:6px;accent-color:var(--teal)"> Please send a confidentiality agreement before our consultation.</label>
+      <div class="btn-row"><button class="btn" type="submit">Request consultation</button><span class="form-status" role="status" aria-live="polite"></span></div>
+    </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="awning" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="grid">
+      <div><a class="brand" href="index.html"><div><b>LYFE MOMENT</b><span>Bread of Lyfe Publishing</span></div></a><p style="margin-top:16px;max-width:36ch">Personal magazines, written and designed for you. Your memories, a cover story.</p></div>
+      <div><h4>Editions</h4><ul><li><a href="editions.html">All editions &amp; pricing</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="private/index.html">The Year in Review</a></li><li><a href="inquire.html">Commission an issue</a></li></ul></div>
+      <div><h4>The house</h4><ul><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy &amp; discretion</a></li><li><a href="mailto:hello@lyfemomentco.com" class="tbc">hello@lyfemomentco.com</a></li></ul></div>
+    </div>
+    <div class="base"><span>© 2026 Bread of Lyfe Publishing · Lyfe Moment Co.</span><span>Whatever is true, honorable and lovely.</span></div>
+  </div>
+</footer>
+<script src="assets/inquiry.js"></script>
+</body>
+</html>
