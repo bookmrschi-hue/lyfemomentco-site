@@ -300,3 +300,14 @@ footer .base{margin-top:56px;padding-top:22px;border-top:1px solid rgba(255,255,
 .addon{background:var(--white);box-shadow:var(--shadow);border-left:14px solid transparent;border-image:var(--stripes-butter) 1;border-image:repeating-linear-gradient(180deg,var(--butter) 0 14px,var(--powder) 14px 28px) 1}
 .addon > *{background:none;padding:0;border-radius:0}
 .addon > div{flex:1 1 420px}
+
+/* gala books */
+.gala-row{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr;gap:clamp(12px,2vw,26px);align-items:end;margin-top:36px}
+.gala-row figure{margin:0;border-radius:6px;overflow:hidden;box-shadow:0 18px 40px rgba(30,50,54,.22);background:#111;transition:transform .25s}
+.gala-row figure:nth-child(2){transform:rotate(-1.2deg)}
+.gala-row figure:nth-child(4){transform:rotate(1.2deg)}
+.gala-row figure:hover{transform:translateY(-6px)}
+.gala-row img{display:block;width:100%;height:auto}
+.gala-cap{text-align:center;font-size:.85rem;letter-spacing:.04em;color:var(--ink);opacity:.75;margin:26px auto 22px;max-width:60ch}
+.gala .center{text-align:center}
+@media (max-width:700px){.gala-row{grid-template-columns:1fr 1fr}.gala-row figure{transform:none!important}}
